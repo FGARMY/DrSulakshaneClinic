@@ -778,86 +778,175 @@ img {
 }
 
 /* ========================================
-   5. DOCTORS
+   5. DOCTORS — Featured Duo Layout
    ======================================== */
 .doctors {
   padding: var(--section-padding);
   background: var(--bg-section-alt);
 }
 
-.doctors-grid {
+.doctors-duo {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 28px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
 }
 
-.doctor-card {
+.doctor-card-featured {
   background: var(--white);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
+  border-radius: var(--radius-xl);
   border: 1px solid var(--gray-100);
+  overflow: hidden;
   transition: all var(--transition-base);
 }
 
-.doctor-card:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-lg);
+.doctor-card-featured:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-xl);
+  border-color: transparent;
 }
 
-.doctor-image {
+.doctor-card-inner {
+  display: flex;
+  flex-direction: column;
+}
+
+.doctor-image-featured {
   width: 100%;
-  height: 280px;
+  height: 320px;
   overflow: hidden;
   position: relative;
 }
 
-.doctor-image img {
+.doctor-image-featured img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top center;
   transition: transform var(--transition-slow);
 }
 
-.doctor-card:hover .doctor-image img {
-  transform: scale(1.05);
+.doctor-card-featured:hover .doctor-image-featured img {
+  transform: scale(1.04);
 }
 
-.doctor-image::after {
+.doctor-image-featured::after {
   content: '';
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 60px;
-  background: linear-gradient(transparent, rgba(255,255,255,.8));
+  height: 80px;
+  background: linear-gradient(transparent, rgba(255,255,255,.9));
   pointer-events: none;
 }
 
-.doctor-info {
-  padding: 22px 24px 26px;
-}
-
-.doctor-info h3 {
-  font-family: var(--font-display);
-  font-size: 1.1rem;
+.doctor-badge-tag {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(255,255,255,.92);
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius-full);
+  padding: 6px 14px;
+  font-size: 0.78rem;
   font-weight: 700;
-  color: var(--gray-800);
-  margin-bottom: 4px;
-}
-
-.doctor-specialty {
-  font-size: 0.85rem;
-  color: var(--primary-500);
-  font-weight: 600;
-  margin-bottom: 8px;
-}
-
-.doctor-exp {
-  font-size: 0.82rem;
-  color: var(--gray-400);
+  color: var(--primary-600);
   display: flex;
   align-items: center;
   gap: 6px;
+  box-shadow: var(--shadow-md);
+  z-index: 2;
+}
+
+.doctor-details {
+  padding: 24px 28px 30px;
+}
+
+.doctor-name-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.doctor-name-row h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--gray-900);
+}
+
+.doctor-satisfaction {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--gray-700);
+  background: #fef9c3;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+}
+
+.doctor-qualifications {
+  font-size: 0.85rem;
+  color: var(--gray-500);
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.doctor-specialty-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--primary-600);
+  background: var(--primary-50);
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  margin-bottom: 16px;
+}
+
+.doctor-bio {
+  font-size: 0.9rem;
+  color: var(--gray-500);
+  line-height: 1.75;
+  margin-bottom: 18px;
+}
+
+.doctor-expertise {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.expertise-tag {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--gray-600);
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  transition: all var(--transition-fast);
+}
+
+.expertise-tag:hover {
+  background: var(--primary-50);
+  border-color: var(--primary-200);
+  color: var(--primary-600);
+}
+
+/* Logo text */
+.logo-text {
+  font-size: 1.25rem;
+  line-height: 1.2;
+}
+
+.logo-light {
+  font-weight: 600;
+  color: var(--gray-500);
 }
 
 /* ========================================
@@ -1341,7 +1430,7 @@ img {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .doctors-grid {
+  .doctors-duo {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -1444,8 +1533,16 @@ img {
     grid-template-columns: 1fr;
   }
 
-  .doctors-grid {
+  .doctors-duo {
     grid-template-columns: 1fr;
+  }
+
+  .doctor-image-featured {
+    height: 260px;
+  }
+
+  .logo-text {
+    font-size: 1.05rem;
   }
 
   .why-us-grid {

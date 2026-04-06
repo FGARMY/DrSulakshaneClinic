@@ -119,6 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     counters.forEach(counter => {
       const target = parseInt(counter.getAttribute('data-count'));
+      const suffix = counter.getAttribute('data-suffix') || '+';
       const duration = 2000;
       const startTime = performance.now();
 
@@ -130,11 +131,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const current = Math.floor(eased * target);
 
         if (target >= 1000) {
-          counter.textContent = current.toLocaleString() + '+';
-        } else if (target === 24) {
-          counter.textContent = current + '/7';
+          counter.textContent = current.toLocaleString() + suffix;
         } else {
-          counter.textContent = current + '+';
+          counter.textContent = current + suffix;
         }
 
         if (progress < 1) {
