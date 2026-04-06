@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MedCare — Modern healthcare clinic offering expert doctors, easy appointments, and comprehensive medical services. Book your appointment today.">
+  <title>MedCare — Modern Healthcare, Made Simple</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="#" class="nav-logo">
+        <div class="logo-icon">
+          <i data-lucide="heart-pulse"></i>
+        </div>
+        MedCare
+      </a>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#hero" class="active">Home</a>
+        <a href="#services">Services</a>
+        <a href="#doctors">Doctors</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="nav-cta" id="navCta">
+        <a href="#appointment" class="btn btn-primary">
+          <i data-lucide="calendar-plus" style="width:16px;height:16px"></i>
+          Book Appointment
+        </a>
+      </div>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero-content reveal-left">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          #1 Rated Healthcare Provider
+        </div>
+
+        <h1 class="hero-title">
+          Modern Healthcare,<br>
+          <span class="highlight">Made Simple</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          Experience world-class medical care with easy online appointments, 
+          expert doctors, and personalized treatment plans — all in one place.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#appointment" class="btn btn-primary">
+            <i data-lucide="calendar-plus" style="width:18px;height:18px"></i>
+            Book Appointment
+          </a>
+          <a href="#services" class="btn btn-secondary">
+            <i data-lucide="stethoscope" style="width:18px;height:18px"></i>
+            View Services
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="hero-stat-icon blue">
+              <i data-lucide="users" style="width:22px;height:22px"></i>
+            </div>
+            <div>
+              <div class="hero-stat-number" data-count="15000">0</div>
+              <div class="hero-stat-label">Happy Patients</div>
+            </div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-icon green">
+              <i data-lucide="user-check" style="width:22px;height:22px"></i>
+            </div>
+            <div>
+              <div class="hero-stat-number" data-count="120">0</div>
+              <div class="hero-stat-label">Expert Doctors</div>
+            </div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-icon purple">
+              <i data-lucide="headset" style="width:22px;height:22px"></i>
+            </div>
+            <div>
+              <div class="hero-stat-number" data-count="24">0</div>
+              <div class="hero-stat-label">24/7 Support</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-image reveal-right">
+        <div class="hero-image-wrapper">
+          <img src="images/hero-doctor.png" alt="Expert Healthcare Professional" loading="eager">
+        </div>
+
+        <!-- Floating cards -->
+        <div class="hero-float top-right">
+          <div class="hero-float-icon" style="background:var(--accent-50);color:var(--accent-600)">
+            <i data-lucide="shield-check" style="width:20px;height:20px"></i>
+          </div>
+          <div class="hero-float-text">
+            <strong>100% Verified</strong>
+            <span>Board Certified Doctors</span>
+          </div>
+        </div>
+
+        <div class="hero-float bottom-left">
+          <div class="hero-float-icon" style="background:var(--primary-50);color:var(--primary-600)">
+            <i data-lucide="calendar-check" style="width:20px;height:20px"></i>
+          </div>
+          <div class="hero-float-text">
+            <strong>Easy Booking</strong>
+            <span>Schedule in 30 seconds</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TRUST BAR ========== -->
+  <section class="trust-bar reveal">
+    <div class="container">
+      <div class="trust-item">
+        <div class="trust-icon gold">
+          <i data-lucide="star" style="width:24px;height:24px"></i>
+        </div>
+        <div class="trust-text">
+          <strong>4.9 / 5.0</strong>
+          <span>Patient Rating</span>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon blue">
+          <i data-lucide="users" style="width:24px;height:24px"></i>
+        </div>
+        <div class="trust-text">
+          <strong>15,000+</strong>
+          <span>Patients Treated</span>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon green">
+          <i data-lucide="award" style="width:24px;height:24px"></i>
+        </div>
+        <div class="trust-text">
+          <strong>JCI Certified</strong>
+          <span>Quality Accredited</span>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon purple">
+          <i data-lucide="clock" style="width:24px;height:24px"></i>
+        </div>
+        <div class="trust-text">
+          <strong>15+ Years</strong>
+          <span>Of Excellence</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SERVICES ========== -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label"><span class="dot"></span> Our Services</div>
+        <h2 class="section-title">Comprehensive Care for Your Health</h2>
+        <p class="section-subtitle">We offer a wide range of medical services to meet all your healthcare needs under one roof.</p>
+      </div>
+
+      <div class="services-grid stagger-children">
+        <div class="service-card reveal">
+          <div class="service-icon blue">
+            <i data-lucide="heart-pulse" style="width:26px;height:26px"></i>
+          </div>
+          <h3>Cardiology</h3>
+          <p>Advanced cardiac care including diagnostics, interventional procedures, and heart health management.</p>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-icon green">
+            <i data-lucide="brain" style="width:26px;height:26px"></i>
+          </div>
+          <h3>Neurology</h3>
+          <p>Expert neurological consultations, brain imaging, and treatment for all nervous system conditions.</p>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-icon purple">
+            <i data-lucide="bone" style="width:26px;height:26px"></i>
+          </div>
+          <h3>Orthopedics</h3>
+          <p>Comprehensive bone and joint care, from sports injuries to complex surgical procedures.</p>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-icon orange">
+            <i data-lucide="baby" style="width:26px;height:26px"></i>
+          </div>
+          <h3>Pediatrics</h3>
+          <p>Compassionate healthcare for children, including wellness checkups, vaccinations, and specialized care.</p>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-icon red">
+            <i data-lucide="scan-eye" style="width:26px;height:26px"></i>
+          </div>
+          <h3>Ophthalmology</h3>
+          <p>Complete eye care services including vision testing, laser surgery, and retinal treatments.</p>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-icon teal">
+            <i data-lucide="microscope" style="width:26px;height:26px"></i>
+          </div>
+          <h3>Diagnostics</h3>
+          <p>State-of-the-art laboratory and imaging services for accurate and timely diagnoses.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== DOCTORS ========== -->
+  <section class="doctors" id="doctors">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label"><span class="dot"></span> Our Doctors</div>
+        <h2 class="section-title">Meet Our Expert Physicians</h2>
+        <p class="section-subtitle">Our team of highly skilled and compassionate doctors is dedicated to providing the best care possible.</p>
+      </div>
+
+      <div class="doctors-grid stagger-children">
+        <div class="doctor-card reveal">
+          <div class="doctor-image">
+            <img src="images/doctor-1.png" alt="Dr. James Wilson" loading="lazy">
+          </div>
+          <div class="doctor-info">
+            <h3>Dr. James Wilson</h3>
+            <div class="doctor-specialty">Cardiologist</div>
+            <div class="doctor-exp">
+              <i data-lucide="briefcase-medical" style="width:14px;height:14px"></i>
+              18 years experience
+            </div>
+          </div>
+        </div>
+
+        <div class="doctor-card reveal">
+          <div class="doctor-image">
+            <img src="images/doctor-2.png" alt="Dr. Sarah Chen" loading="lazy">
+          </div>
+          <div class="doctor-info">
+            <h3>Dr. Sarah Chen</h3>
+            <div class="doctor-specialty">Neurologist</div>
+            <div class="doctor-exp">
+              <i data-lucide="briefcase-medical" style="width:14px;height:14px"></i>
+              12 years experience
+            </div>
+          </div>
+        </div>
+
+        <div class="doctor-card reveal">
+          <div class="doctor-image">
+            <img src="images/doctor-3.png" alt="Dr. Robert Kumar" loading="lazy">
+          </div>
+          <div class="doctor-info">
+            <h3>Dr. Robert Kumar</h3>
+            <div class="doctor-specialty">Orthopedic Surgeon</div>
+            <div class="doctor-exp">
+              <i data-lucide="briefcase-medical" style="width:14px;height:14px"></i>
+              22 years experience
+            </div>
+          </div>
+        </div>
+
+        <div class="doctor-card reveal">
+          <div class="doctor-image">
+            <img src="images/doctor-4.png" alt="Dr. Michael Torres" loading="lazy">
+          </div>
+          <div class="doctor-info">
+            <h3>Dr. Michael Torres</h3>
+            <div class="doctor-specialty">Pediatrician</div>
+            <div class="doctor-exp">
+              <i data-lucide="briefcase-medical" style="width:14px;height:14px"></i>
+              10 years experience
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== WHY CHOOSE US ========== -->
+  <section class="why-us" id="about">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label"><span class="dot"></span> Why Choose Us</div>
+        <h2 class="section-title">Your Health is Our Priority</h2>
+        <p class="section-subtitle">We combine cutting-edge technology with compassionate care to deliver the best healthcare experience.</p>
+      </div>
+
+      <div class="why-us-grid stagger-children">
+        <div class="why-card reveal">
+          <div class="why-icon blue">
+            <i data-lucide="shield-check" style="width:32px;height:32px"></i>
+          </div>
+          <h3>Board Certified</h3>
+          <p>All our doctors are board-certified with extensive training from top medical institutions worldwide.</p>
+        </div>
+
+        <div class="why-card reveal">
+          <div class="why-icon green">
+            <i data-lucide="zap" style="width:32px;height:32px"></i>
+          </div>
+          <h3>Quick Appointments</h3>
+          <p>Book your appointment in under 30 seconds with our seamless online scheduling system.</p>
+        </div>
+
+        <div class="why-card reveal">
+          <div class="why-icon purple">
+            <i data-lucide="flask-conical" style="width:32px;height:32px"></i>
+          </div>
+          <h3>Advanced Technology</h3>
+          <p>We use the latest medical equipment and techniques for precise diagnosis and effective treatment.</p>
+        </div>
+
+        <div class="why-card reveal">
+          <div class="why-icon orange">
+            <i data-lucide="heart-handshake" style="width:32px;height:32px"></i>
+          </div>
+          <h3>Patient-Centered</h3>
+          <p>Every treatment plan is personalized to your unique needs, ensuring the best possible outcomes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA ========== -->
+  <section class="cta-section" id="appointment">
+    <div class="container">
+      <div class="cta-content reveal-scale">
+        <h2>Ready to Take the First Step?</h2>
+        <p>Schedule your appointment today and experience healthcare that truly puts you first. Our team is ready to help.</p>
+        <div class="cta-buttons">
+          <a href="#contact" class="btn btn-white">
+            <i data-lucide="calendar-plus" style="width:18px;height:18px"></i>
+            Book Appointment Now
+          </a>
+          <a href="tel:+1234567890" class="btn btn-outline-white">
+            <i data-lucide="phone" style="width:18px;height:18px"></i>
+            Call Us: (123) 456-7890
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TESTIMONIALS ========== -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label"><span class="dot"></span> Testimonials</div>
+        <h2 class="section-title">What Our Patients Say</h2>
+        <p class="section-subtitle">Real stories from real patients who have experienced our exceptional care.</p>
+      </div>
+
+      <div class="testimonials-grid stagger-children">
+        <div class="testimonial-card reveal">
+          <span class="testimonial-quote">&ldquo;</span>
+          <div class="testimonial-stars">
+            <i data-lucide="star" style="width:16px;height:16px;fill:#f59e0b"></i>
+            <i data-lucide="star" style="width:16px;height:16px;fill:#f59e0b"></i>
+            <i data-lucide="star" style="width:16px;height:16px;fill:#f59e0b"></i>
+            <i data-lucide="star" style="width:16px;height:16px;fill:#f59e0b"></i>
+            <i data-lucide="star" style="width:16px;height:16px;fill:#f59e0b"></i>
+          </div>
+          <p class="testimonial-text">"The care I received was exceptional. From the moment I walked in, the staff made me feel comfortable and the doctor took time to truly listen to my concerns."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar av-1">SC</div>
+            <div class="testimonial-author-info">
+              <h4>Sarah Collins</h4>
+              <span>Cardiac Patient</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal">
+          <span class="testimonial-quote">&ldquo;</span>
+          <div class="testimonial-stars">
+            <i data-lucide="star" style="width:16px;height:16px;fill:#f59e0b"></i>
+            <i data-lucide="star" style="width:16px;height:16px;fill:#f59e0b"></i>
+            <i data-lucide="star" style="width:16px;height:16px;fill:#f59e0b"></i>
+            <i data-lucide="star" style="width:16px;height:16px;fill:#f59e0b"></i>
+            <i data-lucide="star" style="width:16px;height:16px;fill:#f59e0b"></i>
+          </div>
+          <p class="testimonial-text">"Booking was incredibly easy and the wait times were minimal. Dr. Chen's expertise in neurology is unmatched. I highly recommend MedCare to everyone."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar av-2">MR</div>
+            <div class="testimonial-author-info">
+              <h4>Michael Rodriguez</h4>
+              <span>Neurology Patient</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal">
+          <span class="testimonial-quote">&ldquo;</span>
+          <div class="testimonial-stars">
+            <i data-lucide="star" style="width:16px;height:16px;fill:#f59e0b"></i>
+            <i data-lucide="star" style="width:16px;height:16px;fill:#f59e0b"></i>
+            <i data-lucide="star" style="width:16px;height:16px;fill:#f59e0b"></i>
+            <i data-lucide="star" style="width:16px;height:16px;fill:#f59e0b"></i>
+            <i data-lucide="star" style="width:16px;height:16px;fill:#f59e0b"></i>
+          </div>
+          <p class="testimonial-text">"My son has been seeing Dr. Torres for years. He's not just a great pediatrician — he truly cares about his patients. The entire team at MedCare is wonderful."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar av-3">AG</div>
+            <div class="testimonial-author-info">
+              <h4>Anne Garcia</h4>
+              <span>Pediatrics Parent</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FAQ ========== -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label"><span class="dot"></span> FAQ</div>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">Find answers to common questions about our services, appointments, and more.</p>
+      </div>
+
+      <div class="faq-list reveal">
+        <div class="faq-item active">
+          <button class="faq-question" aria-expanded="true">
+            <h3>How do I book an appointment?</h3>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              You can book an appointment through our website by clicking the "Book Appointment" button, calling our reception at (123) 456-7890, or visiting our clinic in person. Our online booking system is available 24/7 for your convenience.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <h3>What insurance plans do you accept?</h3>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              We accept most major insurance plans including Blue Cross, Aetna, UnitedHealthcare, Cigna, and many more. Please contact our billing department for specific inquiries about your coverage.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <h3>What are your clinic hours?</h3>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Our clinic is open Monday through Friday from 8:00 AM to 8:00 PM, and Saturday from 9:00 AM to 5:00 PM. We also offer telehealth consultations outside regular hours for your convenience.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <h3>Do you offer telehealth appointments?</h3>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Yes! We offer secure telehealth consultations for many of our services. You can schedule a virtual visit through our online booking system and connect with your doctor from the comfort of your home.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <h3>How can I access my medical records?</h3>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              You can access your medical records through our secure patient portal available on our website. Simply log in with your credentials to view test results, prescriptions, visit summaries, and more.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo">
+            <div class="logo-icon">
+              <i data-lucide="heart-pulse" style="width:20px;height:20px"></i>
+            </div>
+            MedCare
+          </a>
+          <p>Providing world-class healthcare with compassion and cutting-edge technology. Your health is our mission.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i data-lucide="facebook" style="width:18px;height:18px"></i></a>
+            <a href="#" aria-label="Twitter"><i data-lucide="twitter" style="width:18px;height:18px"></i></a>
+            <a href="#" aria-label="Instagram"><i data-lucide="instagram" style="width:18px;height:18px"></i></a>
+            <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin" style="width:18px;height:18px"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#doctors">Doctors</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#">Cardiology</a></li>
+            <li><a href="#">Neurology</a></li>
+            <li><a href="#">Orthopedics</a></li>
+            <li><a href="#">Pediatrics</a></li>
+            <li><a href="#">Diagnostics</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <ul class="footer-contact">
+            <li>
+              <span class="contact-icon"><i data-lucide="map-pin" style="width:16px;height:16px"></i></span>
+              <span>123 Healthcare Avenue,<br>Medical District, NY 10001</span>
+            </li>
+            <li>
+              <span class="contact-icon"><i data-lucide="phone" style="width:16px;height:16px"></i></span>
+              <span>(123) 456-7890</span>
+            </li>
+            <li>
+              <span class="contact-icon"><i data-lucide="mail" style="width:16px;height:16px"></i></span>
+              <span>hello@medcare.com</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 MedCare. All rights reserved. &nbsp;|&nbsp; <a href="#">Privacy Policy</a> &nbsp;|&nbsp; <a href="#">Terms of Service</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
