@@ -28,29 +28,29 @@ export default function Hero() {
       <div className="absolute top-[25%] left-[12%] text-white/20 font-light text-6xl pointer-events-none select-none opacity-50">+</div>
       <div className="absolute bottom-[35%] left-[30%] text-white/10 font-light text-4xl pointer-events-none select-none opacity-30">+</div>
 
-      <div className="container mx-auto max-w-7xl relative z-10 w-full flex flex-col lg:flex-row items-center px-6 lg:px-12 pt-36 lg:pt-28 h-full min-h-[100dvh]">
+      <div className="container mx-auto max-w-7xl relative z-10 w-full flex flex-col lg:flex-row items-center px-6 lg:px-12 pt-28 lg:pt-20 h-full min-h-[100dvh]">
           
         {/* Left Content - Fluid Typography */}
-        <div className="w-full lg:w-1/2 relative z-20 flex flex-col gap-8 text-center lg:text-left items-center lg:items-start pt-6 lg:pt-0">
+        <div className="w-full lg:w-1/2 relative z-20 flex flex-col gap-8 text-left items-start pt-6 lg:pt-0 lg:-mt-20">
           
           <div className="bg-white/15 backdrop-blur-xl border border-white/20 text-white text-xs md:text-sm font-semibold px-5 py-2 rounded-full inline-flex items-center w-fit shadow-xl opacity-0 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
             <span className="w-2 h-2 rounded-full bg-green-400 mr-3 animate-pulse ring-4 ring-green-400/20"></span>
             #1 TRUSTED CLINIC IN THE CITY
             <Sparkles size={14} className="ml-2 text-amber-300" />
           </div>
-
+ 
           <div className="flex flex-col gap-6 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
             <h1 className="text-white font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] tracking-tight">
               We bring <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-100 to-white">professional</span> <br />
               medical <span className="italic font-light opacity-90 text-blue-200">support.</span>
             </h1>
             
-            <p className="text-blue-50/85 text-sm md:text-lg max-w-lg leading-relaxed font-light mx-auto lg:mx-0">
+            <p className="text-blue-50/85 text-sm md:text-lg max-w-lg leading-relaxed font-light mx-0 lg:mx-0">
               Delivering comprehensive surgical and pediatric care through our innovative approach that seamlessly connects your health needs.
             </p>
           </div>
-
-          <div className="flex flex-col sm:flex-row items-center gap-5 mt-2 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
+ 
+          <div className="flex flex-col sm:flex-row items-start gap-5 mt-2 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
             <Link href="#appointments" className="px-10 py-5 rounded-full bg-slate-900 text-white font-bold hover:bg-slate-800 transition-all shadow-2xl w-full sm:w-auto text-center flex items-center justify-center gap-2 group transform active:scale-95">
               Book Appointment
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
@@ -59,7 +59,7 @@ export default function Hero() {
               Explore Services
             </Link>
           </div>
-
+ 
           {/* Optimized Social Proof Badge for all backgrounds */}
           <div className="flex flex-col sm:flex-row items-center gap-4 mt-6 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.7s' }}>
             <div className="flex -space-x-4 overflow-hidden p-0.5">
@@ -69,8 +69,8 @@ export default function Hero() {
                 </div>
               ))}
             </div>
-            <div className="text-center lg:text-left">
-              <div className="flex items-center justify-center lg:justify-start gap-1">
+            <div className="text-left">
+              <div className="flex items-center justify-start gap-1">
                 {[1, 2, 3, 4, 5].map((s) => (
                   <Star key={s} size={14} className="fill-amber-400 text-amber-400" />
                 ))}
@@ -83,15 +83,15 @@ export default function Hero() {
         </div>
 
         {/* Right Content - Doctors Stacking on Mobile */}
-        <div className="w-full lg:w-1/2 h-full relative lg:absolute lg:right-0 bottom-0 flex lg:items-end justify-center lg:justify-end pointer-events-none z-10 mt-12 lg:mt-0">
-          <div className="relative w-full h-[50vh] sm:h-[60vh] lg:h-[110vh] flex items-end justify-center lg:justify-end lg:-mr-16 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-            <div className="relative w-full h-full flex items-end justify-center lg:justify-end [mask-image:linear-gradient(to_top,transparent_0%,black_10%)] md:[mask-image:linear-gradient(to_top,transparent_0%,black_5%)]">
+        <div className="w-full lg:w-1/2 h-full relative lg:absolute lg:right-0 lg:inset-y-0 flex lg:items-center justify-center lg:justify-end pointer-events-none z-10 mt-12 lg:mt-0">
+          <div className="relative w-full h-[60vh] sm:h-[70vh] lg:h-full flex items-center justify-center lg:justify-end lg:-mr-24 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+            <div className="relative w-full h-full flex items-center justify-center lg:justify-end">
               <Image
                 src="/images/updated-doctors-hero.png"
                 alt="Dr. Sulakshane & Team"
                 width={1600}
                 height={1200}
-                className="w-auto h-full max-h-[80%] lg:max-h-full object-contain object-bottom drop-shadow-[0_20px_100px_rgba(255,255,255,0.1)] lg:drop-shadow-[0_20px_100px_rgba(37,99,235,0.35)] z-20 scale-[1.] sm:scale-[1.1] lg:scale-[1.65] origin-bottom pointer-events-auto transition-all duration-[1200ms] animate-float"
+                className="w-auto h-full max-h-[85%] lg:max-h-[100%] object-contain object-center drop-shadow-[0_20px_100px_rgba(255,255,255,0.1)] lg:drop-shadow-[0_20px_100px_rgba(37,99,235,0.35)] z-20 scale-[1.1] sm:scale-[1.25] lg:scale-[2.05] origin-center pointer-events-auto transition-all duration-[1200ms] animate-float flex-shrink-0"
                 priority
               />
             </div>
