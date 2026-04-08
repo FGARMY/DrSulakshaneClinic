@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Poppins, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -49,6 +50,7 @@ export default function RootLayout({
     >
       <body className="antialiased bg-slate-50 text-slate-800">
         {children}
+        <ScrollToTop />
       </body>
     </html>
   );
