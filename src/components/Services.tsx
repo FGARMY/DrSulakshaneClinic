@@ -158,35 +158,38 @@ export default function Services() {
         </div>
 
         {/* Clinical Grid - "Case File" Aesthetic */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-slate-200/50 medical-border overflow-hidden rounded-sm">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-slate-100 medical-border overflow-hidden rounded-sm shadow-2xl shadow-indigo-950/5">
           {services.map((item, idx) => (
             <div 
               key={idx} 
-              className={`group relative overflow-hidden bg-white p-10 transition-all duration-700 opacity-0 animate-fade-in-up flex flex-col hover:z-10 hover:shadow-2xl hover:shadow-indigo-950/5 ${item.className}`}
+              className={`group relative overflow-hidden bg-white p-10 transition-all duration-700 opacity-0 animate-fade-in-up flex flex-col hover:z-10 ${item.className}`}
               style={{ animationDelay: item.delay }}
             >
+              {/* Subtle accent line on top */}
+              <div className="absolute top-0 left-0 w-full h-[2px] bg-indigo-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+
               <div className="relative z-10 flex flex-col h-full">
                 <div className="flex justify-between items-start mb-12">
                   <span className="text-[10px] font-bold text-amber-600 uppercase tracking-widest bg-amber-50 px-3 py-1 rounded-sm opacity-0 animate-fade-in-up" style={{ animationDelay: `calc(${item.delay} + 0.2s)` }}>
                     {item.id}
                   </span>
-                  <div className="text-slate-200 group-hover:text-amber-500/40 transition-colors duration-500 w-10 h-10 opacity-0 animate-scale-in" style={{ animationDelay: `calc(${item.delay} + 0.3s)` }}>
+                  <div className="text-slate-300 group-hover:text-indigo-600 transition-all duration-500 w-10 h-10 opacity-0 animate-scale-in group-hover:scale-110" style={{ animationDelay: `calc(${item.delay} + 0.3s)` }}>
                     {item.icon}
                   </div>
                 </div>
 
                 <div className="flex-1">
-                  <h3 className="text-2xl font-display font-bold text-indigo-950 mb-6 leading-[1.1] pr-8 group-hover:text-amber-600 transition-colors duration-500">{item.title}</h3>
-                  <p className="text-slate-500 text-sm font-light leading-relaxed mb-8 max-w-sm">{item.desc}</p>
+                  <h3 className="text-2xl font-display font-bold text-indigo-950 mb-6 leading-[1.1] pr-8 group-hover:text-indigo-600 transition-colors duration-500 tracking-tight">{item.title}</h3>
+                  <p className="text-slate-500 text-sm font-light leading-relaxed mb-8 max-w-sm group-hover:text-slate-600 transition-colors">{item.desc}</p>
                   {item.extra}
                 </div>
 
                 <div className="mt-12 flex items-center justify-between">
                   <div className="flex flex-col">
-                    <span className="text-[9px] uppercase font-bold text-slate-300 tracking-[0.2em] mb-2">Lead Clinician</span>
+                    <span className="text-[9px] uppercase font-bold text-slate-300 tracking-[0.2em] mb-2 group-hover:text-amber-600 transition-colors">Lead Clinician</span>
                     <span className="text-xs font-serif italic text-slate-900">{item.expert}</span>
                   </div>
-                  <div className="w-10 h-10 border border-slate-100 flex items-center justify-center text-slate-300 group-hover:bg-indigo-950 group-hover:text-white group-hover:border-indigo-950 transition-all duration-500">
+                  <div className="w-10 h-10 border border-slate-100 flex items-center justify-center text-slate-300 group-hover:bg-indigo-950 group-hover:text-white group-hover:border-indigo-950 transition-all duration-500 rounded-full">
                     <ChevronRight size={14} />
                   </div>
                 </div>
