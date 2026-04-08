@@ -7,6 +7,7 @@ import WhyUs from "@/components/WhyUs";
 import CTA from "@/components/CTA";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
+import Resources from "@/components/Resources";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -50,6 +51,7 @@ export default function Home() {
       <Services />
       <Doctors />
       <WhyUs />
+      <Resources />
       <Testimonials />
       <FAQ />
       <CTA />
