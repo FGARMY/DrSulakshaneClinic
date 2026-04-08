@@ -12,13 +12,36 @@ const NAV_ITEMS = ["Home", "About", "Services", "Doctors", "Resources", "Contact
  */
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
-
+  const [activeSection, setActiveSection] = useState("home");
+ 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
+
+    const observerOptions = {
+      root: null,
+      rootMargin: '-20% 0px -70% 0px',
+      threshold: 0
+    };
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    const sections = document.querySelectorAll('section[id]');
+    sections.forEach(section => observer.observe(section));
+
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      sections.forEach(section => observer.unobserve(section));
+    };
   }, []);
 
   return (
@@ -47,19 +70,24 @@ export default function Navbar() {
 
           {/* Navigation Links */}
           <nav className="hidden md:flex items-center gap-8" aria-label="Main Navigation">
-            {NAV_ITEMS.map((item) => (
-              <Link 
-                key={item} 
-                href={`#${item.toLowerCase()}`}
-                className={`text-sm font-medium hover:opacity-100 transition-opacity relative group ${
-                  scrolled ? "text-slate-600 hover:text-primary" : "text-white/80 hover:text-white"
-                }`}
-                aria-label={`Go to ${item} section`}
-              >
-                {item}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-current transition-all group-hover:w-full" aria-hidden="true"></span>
-              </Link>
-            ))}
+            {NAV_ITEMS.map((item) => {
+              const isActive = activeSection === item.toLowerCase().replace(" ", "-");
+              return (
+                <Link 
+                  key={item} 
+                  href={`#${item.toLowerCase().replace(" ", "-")}`}
+                  className={`text-sm font-medium transition-all relative group ${
+                    isActive 
+                      ? (scrolled ? "text-primary" : "text-white") 
+                      : (scrolled ? "text-slate-600 hover:text-primary" : "text-white/80 hover:text-white")
+                  }`}
+                  aria-label={`Go to ${item} section`}
+                >
+                  {item}
+                  <span className={`absolute -bottom-1 left-0 h-0.5 bg-current transition-all duration-300 ${isActive ? "w-full" : "w-0 group-hover:w-full"}`} aria-hidden="true"></span>
+                </Link>
+              );
+            })}
           </nav>
 
           {/* Call to Action */}
