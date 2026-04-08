@@ -23,14 +23,16 @@ export default function Navbar() {
 
   return (
     <div 
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? "py-4" : "py-8"
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-in-out ${
+        scrolled ? "py-3" : "py-8"
       }`}
     >
       <nav className="container mx-auto px-6 max-w-7xl">
         <div 
-          className={`flex items-center justify-between rounded-full px-8 py-3 transition-all duration-300 ${
-            scrolled ? "bg-white/90 backdrop-blur-md shadow-lg border border-slate-200/50" : "bg-transparent"
+          className={`flex items-center justify-between rounded-full px-8 py-3 transition-all duration-500 ease-in-out ${
+            scrolled 
+              ? "bg-white/80 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.08)] border border-white/40" 
+              : "bg-transparent border-transparent"
           }`}
         >
           {/* Logo Section */}
