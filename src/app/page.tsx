@@ -8,6 +8,7 @@ import CTA from "@/components/CTA";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import Resources from "@/components/Resources";
+import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -54,6 +55,7 @@ export default function Home() {
       <Resources />
       <Testimonials />
       <FAQ />
+      <Contact />
       <CTA />
       <Footer />
     </main>
