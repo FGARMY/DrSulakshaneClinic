@@ -40,12 +40,12 @@ export default function Hero() {
           </div>
  
           <div className="flex flex-col gap-6 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-            <h1 className="text-white font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] tracking-tight">
+            <h1 className="text-white font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.05] tracking-tightest">
               We bring <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-100 to-white">professional</span> <br />
-              medical <span className="italic font-light opacity-90 text-blue-200">support.</span>
+              medical <span className="italic font-light opacity-90 text-blue-100">support.</span>
             </h1>
             
-            <p className="text-blue-50/85 text-sm md:text-lg max-w-lg leading-relaxed font-light mx-0 lg:mx-0">
+            <p className="text-blue-50/90 text-sm md:text-lg max-w-lg leading-relaxed font-light mx-0 lg:mx-0 tracking-wide">
               Delivering comprehensive surgical and pediatric care through our innovative approach that seamlessly connects your health needs.
             </p>
           </div>
