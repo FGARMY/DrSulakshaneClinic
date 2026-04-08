@@ -49,13 +49,17 @@ export default function WhyUs() {
         {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {reasons.map((item, idx) => (
-            <div key={idx} className="flex gap-6 bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-lg transition-shadow">
-              <div className={`w-16 h-16 rounded-2xl flex-shrink-0 flex items-center justify-center border-2 ${item.color}`}>
+            <div 
+              key={idx} 
+              className="flex flex-col sm:flex-row gap-6 bg-white p-8 rounded-[2rem] border border-slate-100 shadow-[0_10px_40px_rgba(15,23,42,0.03)] hover:shadow-[0_20px_60px_rgba(15,23,42,0.08)] transition-all duration-500 hover:-translate-y-1 opacity-0 animate-fade-in-up"
+              style={{ animationDelay: `${(idx + 1) * 0.15}s` }}
+            >
+              <div className={`w-16 h-16 rounded-2xl flex-shrink-0 flex items-center justify-center border-2 transition-transform group-hover:scale-110 ${item.color}`}>
                 {item.icon}
               </div>
               <div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">{item.title}</h3>
-                <p className="text-slate-600 leading-relaxed font-light">{item.desc}</p>
+                <h3 className="text-xl font-bold text-slate-900 mb-2 tracking-tight">{item.title}</h3>
+                <p className="text-slate-500 leading-relaxed font-light text-sm sm:text-base">{item.desc}</p>
               </div>
             </div>
           ))}
