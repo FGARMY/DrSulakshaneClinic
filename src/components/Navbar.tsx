@@ -3,6 +3,7 @@
 import { Activity, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { ThemeToggle } from "./ThemeToggle";
 
 const NAV_ITEMS = ["Home", "About", "Services", "Doctors", "Resources", "Contact"];
 
@@ -101,29 +102,35 @@ export default function Navbar() {
           </nav>
 
           {/* Call to Action - Desktop */}
-          <Link 
-            href="#appointments" 
-            className={`hidden md:flex font-medium px-6 py-2.5 rounded-full text-sm transition-all shadow-sm font-display hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 ${
-              scrolled || mobileMenuOpen
-                ? "bg-primary text-white hover:bg-primary-dark" 
-                : "bg-white text-primary hover:bg-slate-50"
-            }`}
-            aria-label="Book an Appointment"
-          >
-            Book Appointment
-          </Link>
+          <div className="hidden md:flex items-center gap-4">
+            <ThemeToggle scrolled={scrolled || mobileMenuOpen} />
+            <Link 
+              href="#appointments" 
+              className={`font-medium px-6 py-2.5 rounded-full text-sm transition-all shadow-sm font-display hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 ${
+                scrolled || mobileMenuOpen
+                  ? "bg-primary text-white hover:bg-primary-dark" 
+                  : "bg-white text-primary hover:bg-slate-50"
+              }`}
+              aria-label="Book an Appointment"
+            >
+              Book Appointment
+            </Link>
+          </div>
 
-          {/* Mobile Menu Toggle */}
-          <button 
-            className={`lg:hidden w-10 h-10 rounded-xl flex items-center justify-center transition-colors ${
-              scrolled || mobileMenuOpen ? "text-slate-900 bg-slate-100" : "text-white bg-white/10"
-            }`}
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
-            aria-expanded={mobileMenuOpen}
-          >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          {/* Mobile Menu Toggle & Theme */}
+          <div className="lg:hidden flex items-center gap-3">
+            <ThemeToggle scrolled={scrolled || mobileMenuOpen} />
+            <button 
+              className={`w-10 h-10 rounded-xl flex items-center justify-center transition-colors ${
+                scrolled || mobileMenuOpen ? "text-slate-900 bg-slate-100" : "text-white bg-white/10"
+              }`}
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={mobileMenuOpen}
+            >
+              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu Overlay */}
