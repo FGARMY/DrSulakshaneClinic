@@ -26,7 +26,7 @@ const SocialIcons = {
 
 export default function Footer() {
   return (
-    <footer id="contact" className="bg-slate-900 border-t border-slate-800 text-slate-300 pt-20 pb-10 px-4 sm:px-6">
+    <footer className="bg-slate-900 dark:bg-black border-t border-slate-800 dark:border-slate-900 text-slate-300 pt-20 pb-10 px-4 sm:px-6 transition-colors duration-500">
       <div className="container mx-auto max-w-7xl">
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
@@ -51,7 +51,7 @@ export default function Footer() {
                   <a 
                     key={idx} 
                     href="#" 
-                    className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-indigo-600 hover:text-white transition-colors"
+                    className="w-10 h-10 rounded-full bg-slate-800 dark:bg-slate-900 flex items-center justify-center text-slate-400 hover:bg-indigo-600 hover:text-white transition-colors"
                     aria-label={`Visit our ${names[idx]} page`}
                   >
                     <Icon className="w-[18px] h-[18px]" aria-hidden="true" />
@@ -75,7 +75,7 @@ export default function Footer() {
             </ul>
           </nav>
 
-          {/* Services */}
+          {/* Our Services */}
           <nav aria-label="Services Navigation Footer">
             <h4 className="text-white font-bold mb-6 tracking-wide uppercase text-sm">Our Services</h4>
             <ul className="space-y-4">
@@ -94,16 +94,16 @@ export default function Footer() {
             <h4 id="footer-contact-heading" className="text-white font-bold mb-6 tracking-wide uppercase text-sm">Contact & Hours</h4>
             <ul className="space-y-5">
               <li className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-indigo-400 flex-shrink-0" aria-hidden="true">
+                <div className="w-10 h-10 rounded-full bg-slate-800 dark:bg-slate-900 flex items-center justify-center text-indigo-400 flex-shrink-0" aria-hidden="true">
                   <MapPin size={18} />
                 </div>
                 <address className="text-slate-400 text-sm font-light leading-relaxed pt-2 not-italic">
                   <span className="sr-only">Address: </span>
-                  Dr. Sulakshane Clinic,<br/>Near XYZ Square, Pune
+                  Dr. Sulakshane Clinic, Plot 42,<br/>Near XYZ Square, Pune
                 </address>
               </li>
               <li className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-indigo-400 flex-shrink-0" aria-hidden="true">
+                <div className="w-10 h-10 rounded-full bg-slate-800 dark:bg-slate-900 flex items-center justify-center text-indigo-400 flex-shrink-0" aria-hidden="true">
                   <Phone size={18} />
                 </div>
                 <span className="text-slate-400 text-sm font-light leading-relaxed pt-2.5">
@@ -111,7 +111,7 @@ export default function Footer() {
                   +91 98765 43210
                 </span>
               </li>
-              <li className="flex items-start gap-6 border-t border-slate-800 pt-5 mt-5">
+              <li className="flex items-start gap-6 border-t border-slate-800 dark:border-slate-900 pt-5 mt-5">
                 <div className="text-indigo-400">
                   <Clock size={18} />
                 </div>
@@ -134,7 +134,7 @@ export default function Footer() {
               <input 
                 type="email" 
                 placeholder="Your email address" 
-                className="w-full bg-slate-800 border-none rounded-full py-4 pl-6 pr-14 text-sm text-white placeholder-slate-500 focus:ring-2 focus:ring-indigo-600 transition-all outline-none"
+                className="w-full bg-slate-800 dark:bg-slate-900 border-none rounded-full py-4 pl-6 pr-14 text-sm text-white placeholder-slate-500 focus:ring-2 focus:ring-indigo-600 transition-all outline-none"
                 aria-label="Email for newsletter"
               />
               <button 
@@ -149,7 +149,7 @@ export default function Footer() {
 
         </div>
 
-        <div className="pt-8 border-t border-slate-800 text-center text-slate-500 text-sm font-light mt-16">
+        <div className="pt-8 border-t border-slate-800 dark:border-slate-900 text-center text-slate-500 text-sm font-light mt-16">
           <p>&copy; {new Date().getFullYear()} Dr. Sulakshane Clinic. All rights reserved.</p>
         </div>
 

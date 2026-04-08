@@ -2,19 +2,19 @@ import DoctorCard from "./DoctorCard";
 
 export default function Doctors() {
   return (
-    <section id="doctors" className="py-24 px-4 sm:px-6 bg-white relative">
+    <section id="doctors" className="py-24 px-4 sm:px-6 bg-white dark:bg-[#020617] relative transition-colors duration-500">
       <div className="container mx-auto max-w-7xl">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 bg-indigo-50 text-indigo-600 px-4 py-2 rounded-full font-semibold text-sm mb-6">
-            <span className="w-2 h-2 rounded-full bg-indigo-600 block"></span>
+        <div className="text-center max-w-3xl mx-auto mb-16 opacity-0 animate-fade-in-up">
+          <div className="inline-flex items-center gap-2 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 px-4 py-2 rounded-full font-semibold text-sm mb-6">
+            <span className="w-2 h-2 rounded-full bg-indigo-600 dark:bg-indigo-400 block"></span>
             Our Doctors
           </div>
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 mb-6 tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 dark:text-slate-100 mb-6 tracking-tight">
             Meet the Experts Behind Your Care
           </h2>
-          <p className="text-lg text-slate-600 font-light leading-relaxed">
+          <p className="text-lg text-slate-600 dark:text-slate-400 font-light leading-relaxed">
             A husband-wife duo of specialists with decades of experience, dedicated to your family's health and well-being.
           </p>
         </div>

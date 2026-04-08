@@ -2,14 +2,14 @@ import { CalendarPlus, PhoneCall } from "lucide-react";
 
 export default function CTA() {
   return (
-    <section id="appointment" className="py-24 px-4 sm:px-6 relative">
+    <section id="appointment" className="py-24 px-4 sm:px-6 relative bg-white dark:bg-[#020617] transition-colors duration-500">
       <div className="container mx-auto max-w-5xl">
-        <div className="bg-gradient-to-br from-primary via-indigo-600 to-violet-700 rounded-[3rem] p-10 md:p-20 text-center shadow-[0_30px_100px_rgba(79,70,229,0.25)] relative overflow-hidden group opacity-0 animate-fade-in-up">
+        <div className="bg-gradient-to-br from-primary via-indigo-600 to-violet-700 dark:from-indigo-900 dark:via-indigo-800 dark:to-slate-900 rounded-[3rem] p-10 md:p-20 text-center shadow-[0_30px_100px_rgba(79,70,229,0.25)] relative overflow-hidden group opacity-0 animate-fade-in-up transition-all duration-500">
           
           {/* Decorative faint background shapes */}
           <div className="absolute top-0 left-0 w-full h-full bg-[url('/images/grid.svg')] opacity-10 mix-blend-overlay pointer-events-none"></div>
-          <div className="absolute -top-40 -left-40 w-96 h-96 bg-white/20 rounded-full blur-[120px] pointer-events-none group-hover:scale-110 transition-transform duration-1000"></div>
-          <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-indigo-400/20 rounded-full blur-[120px] pointer-events-none group-hover:scale-110 transition-transform duration-1000"></div>
+          <div className="absolute -top-40 -left-40 w-96 h-96 bg-white/20 dark:bg-white/5 rounded-full blur-[120px] pointer-events-none group-hover:scale-110 transition-transform duration-1000"></div>
+          <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-indigo-400/20 dark:bg-indigo-400/5 rounded-full blur-[120px] pointer-events-none group-hover:scale-110 transition-transform duration-1000"></div>
 
           <div className="relative z-10 max-w-3xl mx-auto">
             <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md text-white px-5 py-2 rounded-full font-bold text-xs uppercase tracking-widest mb-8">
@@ -24,7 +24,7 @@ export default function CTA() {
             </p>
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-              <a href="#contact" className="w-full sm:w-auto bg-white text-primary px-10 py-5 rounded-full font-bold shadow-2xl hover:bg-slate-50 transition-all hover:-translate-y-1 active:scale-95 flex items-center justify-center gap-3 text-lg">
+              <a href="#contact" className="w-full sm:w-auto bg-white dark:bg-slate-100 text-primary px-10 py-5 rounded-full font-bold shadow-2xl hover:bg-slate-50 dark:hover:bg-white transition-all hover:-translate-y-1 active:scale-95 flex items-center justify-center gap-3 text-lg">
                 <CalendarPlus size={22} />
                 Book Appointment
               </a>

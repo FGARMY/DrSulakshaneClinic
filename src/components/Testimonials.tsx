@@ -28,7 +28,7 @@ export default function Testimonials() {
   return (
     <section id="testimonials" className="py-24 px-4 sm:px-6 bg-slate-50 relative">
       <div className="container mx-auto max-w-7xl">
-        
+
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 bg-indigo-50 text-indigo-600 px-4 py-2 rounded-full font-semibold text-sm mb-6">
@@ -46,11 +46,11 @@ export default function Testimonials() {
         {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {reviews.map((rev, idx) => (
-            <div 
-              key={idx} 
+            <div
+              key={idx}
               className="bg-white rounded-3xl p-8 border border-white shadow-[0_10px_40px_rgba(15,23,42,0.05)] relative flex flex-col group hover:shadow-[0_20px_60px_rgba(15,23,42,0.08)] transition-all duration-500 hover:-translate-y-1"
             >
-              
+
               {/* Quote mark decoration */}
               <div className="absolute top-4 right-8 text-8xl text-slate-50 font-serif leading-none italic select-none pointer-events-none group-hover:text-slate-100 transition-colors duration-500">
                 &ldquo;
