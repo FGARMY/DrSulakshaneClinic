@@ -1,4 +1,4 @@
-import { HeartPulse, MapPin, Phone, Mail } from "lucide-react";
+import { HeartPulse, MapPin, Phone, Mail, Clock } from "lucide-react";
 import Link from "next/link";
 
 const SocialIcons = {
@@ -89,18 +89,18 @@ export default function Footer() {
             </ul>
           </nav>
 
-          {/* Contact */}
+          {/* Contact & Hours */}
           <section aria-labelledby="footer-contact-heading">
-            <h4 id="footer-contact-heading" className="text-white font-bold mb-6 tracking-wide uppercase text-sm">Contact Us</h4>
+            <h4 id="footer-contact-heading" className="text-white font-bold mb-6 tracking-wide uppercase text-sm">Contact & Hours</h4>
             <ul className="space-y-5">
               <li className="flex items-start gap-4">
                 <div className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-indigo-400 flex-shrink-0" aria-hidden="true">
                   <MapPin size={18} />
                 </div>
-                <span className="text-slate-400 text-sm font-light leading-relaxed pt-2">
+                <address className="text-slate-400 text-sm font-light leading-relaxed pt-2 not-italic">
                   <span className="sr-only">Address: </span>
-                  Dr. Sulakshane Clinic,<br/>Your City, India
-                </span>
+                  Dr. Sulakshane Clinic,<br/>Near XYZ Square, Pune
+                </address>
               </li>
               <li className="flex items-start gap-4">
                 <div className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-indigo-400 flex-shrink-0" aria-hidden="true">
@@ -108,17 +108,18 @@ export default function Footer() {
                 </div>
                 <span className="text-slate-400 text-sm font-light leading-relaxed pt-2.5">
                   <span className="sr-only">Phone: </span>
-                  +91 XXXXX XXXXX
+                  +91 98765 43210
                 </span>
               </li>
-              <li className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-indigo-400 flex-shrink-0" aria-hidden="true">
-                  <Mail size={18} />
+              <li className="flex items-start gap-6 border-t border-slate-800 pt-5 mt-5">
+                <div className="text-indigo-400">
+                  <Clock size={18} />
                 </div>
-                <span className="text-slate-400 text-sm font-light leading-relaxed pt-2.5">
-                  <span className="sr-only">Email: </span>
-                  contact@drsulakshane.com
-                </span>
+                <div>
+                  <h5 className="text-xs font-bold text-white uppercase tracking-widest mb-2">Business Hours</h5>
+                  <p className="text-[13px] text-slate-400 font-light">Mon - Sat: 10:00 AM - 8:00 PM</p>
+                  <p className="text-[13px] text-slate-400 font-light">Sunday: Closed</p>
+                </div>
               </li>
             </ul>
           </section>
