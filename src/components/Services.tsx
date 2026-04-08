@@ -167,10 +167,10 @@ export default function Services() {
             >
               <div className="relative z-10 flex flex-col h-full">
                 <div className="flex justify-between items-start mb-12">
-                  <span className="text-[10px] font-bold text-amber-600 uppercase tracking-widest bg-amber-50 px-3 py-1 rounded-sm">
+                  <span className="text-[10px] font-bold text-amber-600 uppercase tracking-widest bg-amber-50 px-3 py-1 rounded-sm opacity-0 animate-fade-in-up" style={{ animationDelay: `calc(${item.delay} + 0.2s)` }}>
                     {item.id}
                   </span>
-                  <div className="text-slate-200 group-hover:text-amber-500/40 transition-colors duration-500 w-10 h-10">
+                  <div className="text-slate-200 group-hover:text-amber-500/40 transition-colors duration-500 w-10 h-10 opacity-0 animate-scale-in" style={{ animationDelay: `calc(${item.delay} + 0.3s)` }}>
                     {item.icon}
                   </div>
                 </div>
