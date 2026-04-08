@@ -28,34 +28,34 @@ export default function Hero() {
       <div className="absolute top-[25%] left-[12%] text-white/20 font-light text-6xl pointer-events-none select-none opacity-50">+</div>
       <div className="absolute bottom-[35%] left-[30%] text-white/10 font-light text-4xl pointer-events-none select-none opacity-30">+</div>
 
-      <div className="container mx-auto max-w-7xl relative z-10 w-full flex flex-col lg:flex-row items-center px-6 lg:px-12 pt-28 lg:pt-20 h-full min-h-[100dvh]">
+      <div className="container mx-auto max-w-7xl relative z-10 w-full flex flex-col lg:flex-row items-center px-4 sm:px-6 lg:px-12 pt-24 sm:pt-28 lg:pt-20 h-full min-h-[100dvh]">
           
         {/* Left Content - Fluid Typography */}
-        <div className="w-full lg:w-1/2 relative z-20 flex flex-col gap-8 text-left items-start pt-6 lg:pt-0 lg:-mt-20">
+        <div className="w-full lg:w-1/2 relative z-20 flex flex-col gap-6 sm:gap-8 text-left items-start pt-4 sm:pt-6 lg:pt-0 lg:-mt-20">
           
-          <div className="bg-white/15 backdrop-blur-xl border border-white/20 text-white text-xs md:text-sm font-semibold px-5 py-2 rounded-full inline-flex items-center w-fit shadow-xl opacity-0 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-            <span className="w-2 h-2 rounded-full bg-green-400 mr-3 animate-pulse ring-4 ring-green-400/20"></span>
+          <div className="bg-white/15 backdrop-blur-xl border border-white/20 text-white text-[10px] sm:text-xs md:text-sm font-semibold px-4 sm:px-5 py-1.5 sm:py-2 rounded-full inline-flex items-center w-fit shadow-xl opacity-0 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+            <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-green-400 mr-2 sm:mr-3 animate-pulse ring-4 ring-green-400/20"></span>
             #1 TRUSTED CLINIC IN THE CITY
-            <Sparkles size={14} className="ml-2 text-amber-300" />
+            <Sparkles size={12} className="ml-2 text-amber-300 sm:w-3.5 sm:h-3.5" />
           </div>
  
-          <div className="flex flex-col gap-6 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-            <h1 className="text-white font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.05] tracking-tightest">
+          <div className="flex flex-col gap-4 sm:gap-6 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+            <h1 className="text-white font-display text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] sm:leading-[1.05] tracking-tightest">
               We bring <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-100 to-white">professional</span> <br />
               medical <span className="italic font-light opacity-90 text-blue-100">support.</span>
             </h1>
             
-            <p className="text-blue-50/90 text-sm md:text-lg max-w-lg leading-relaxed font-light mx-0 lg:mx-0 tracking-wide">
+            <p className="text-blue-50/90 text-xs sm:text-base md:text-lg max-w-lg leading-relaxed font-light mx-0 lg:mx-0 tracking-wide">
               Delivering comprehensive surgical and pediatric care through our innovative approach that seamlessly connects your health needs.
             </p>
           </div>
- 
-          <div className="flex flex-col sm:flex-row items-start gap-5 mt-2 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
-            <Link href="#appointments" className="px-10 py-5 rounded-full bg-slate-900 text-white font-bold hover:bg-slate-800 transition-all shadow-2xl w-full sm:w-auto text-center flex items-center justify-center gap-2 group transform active:scale-95">
+  
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-start gap-4 sm:gap-5 mt-2 w-full sm:w-auto opacity-0 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
+            <Link href="#appointments" className="px-8 sm:px-10 py-4 sm:py-5 rounded-full bg-slate-900 text-white font-bold hover:bg-slate-800 transition-all shadow-2xl text-sm sm:text-base text-center flex items-center justify-center gap-2 group transform active:scale-95">
               Book Appointment
-              <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform sm:w-5 sm:h-5" />
             </Link>
-            <Link href="#services" className="px-10 py-5 rounded-full border border-white/35 text-white font-bold hover:bg-white/10 transition-all w-full sm:w-auto text-center hover:shadow-lg">
+            <Link href="#services" className="px-8 sm:px-10 py-4 sm:py-5 rounded-full border border-white/35 text-white font-bold hover:bg-white/10 transition-all text-sm sm:text-base text-center hover:shadow-lg">
               Explore Services
             </Link>
           </div>
