@@ -20,8 +20,21 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Dr. Sulakshane Clinic — Expert Surgical & Child Care",
-  description: "Comprehensive surgical and pediatric care under one roof. With 20+ years of combined expertise, Dr. Swati & Dr. Mahesh Sulakshane deliver compassionate, world-class healthcare.",
+  title: "Dr. Sulakshane Clinic | Expert Surgical & Pediatric Care",
+  description: "Advanced laparoscopic surgery and expert pediatric care in Pune. 23+ years of experience. Trusted by 15,000+ patients. Book your consultation today.",
+  keywords: ["Laparoscopic Surgery", "Pediatrician", "General Surgeon", "Breast Surgery", "Dr. Sulakshane Clinic", "Pune Healthcare"],
+  openGraph: {
+    title: "Dr. Sulakshane Clinic | Expert Surgical & Pediatric Care",
+    description: "Specialized surgical interventions and comprehensive pediatric management by Dr. Swati & Dr. Mahesh Sulakshane.",
+    type: "website",
+    locale: "en_IN",
+    siteName: "Dr. Sulakshane Clinic",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Dr. Sulakshane Clinic | Expert Surgical & Pediatric Care",
+    description: "23+ years of excellence in surgical and child care.",
+  },
 };
 
 export default function RootLayout({
