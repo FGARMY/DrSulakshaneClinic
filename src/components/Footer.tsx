@@ -1,4 +1,4 @@
-import { HeartPulse, MapPin, Phone, Mail, Clock } from "lucide-react";
+import { HeartPulse, MapPin, Phone, Mail, Clock, ChevronRight } from "lucide-react";
 import Link from "next/link";
 
 const SocialIcons = {
@@ -90,7 +90,7 @@ export default function Footer() {
           </nav>
 
           {/* Contact & Hours */}
-          <section aria-labelledby="footer-contact-heading">
+          <section aria-labelledby="footer-contact-heading" className="lg:col-span-1">
             <h4 id="footer-contact-heading" className="text-white font-bold mb-6 tracking-wide uppercase text-sm">Contact & Hours</h4>
             <ul className="space-y-5">
               <li className="flex items-start gap-4">
@@ -123,6 +123,29 @@ export default function Footer() {
               </li>
             </ul>
           </section>
+
+          {/* Newsletter / Map Placeholder */}
+          <div className="lg:col-span-1">
+            <h4 className="text-white font-bold mb-6 tracking-wide uppercase text-sm">Newsletter</h4>
+            <p className="text-slate-400 text-xs font-light leading-relaxed mb-6">
+              Subscribe to get health tips and clinic updates directly to your inbox.
+            </p>
+            <form className="relative group" onSubmit={(e) => e.preventDefault()}>
+              <input 
+                type="email" 
+                placeholder="Your email address" 
+                className="w-full bg-slate-800 border-none rounded-full py-4 pl-6 pr-14 text-sm text-white placeholder-slate-500 focus:ring-2 focus:ring-indigo-600 transition-all outline-none"
+                aria-label="Email for newsletter"
+              />
+              <button 
+                type="submit"
+                className="absolute right-1.5 top-1.5 bottom-1.5 w-11 h-11 bg-indigo-600 text-white rounded-full flex items-center justify-center hover:bg-indigo-500 transition-colors shadow-lg"
+                aria-label="Subscribe"
+              >
+                <ChevronRight size={18} />
+              </button>
+            </form>
+          </div>
 
         </div>
 
