@@ -32,6 +32,7 @@ export default function Doctors() {
             description="A highly experienced surgeon known for precise, minimally invasive procedures and compassionate patient care. Trained at leading institutions and internationally exposed."
             tags={["Laparoscopic Surgery", "Pediatric Surgery", "Breast Surgery", "GI & Colorectal"]}
             themeColor="indigo"
+            delay="0.2s"
           />
 
           <DoctorCard 
@@ -44,6 +45,7 @@ export default function Doctors() {
             description="A trusted pediatrician known for patient-friendly consultations and accurate diagnosis. Parents consistently highlight his calm approach and detailed explanations."
             tags={["Child Growth", "Vaccination", "Child Nutrition", "Infections"]}
             themeColor="emerald"
+            delay="0.4s"
           />
 
         </div>

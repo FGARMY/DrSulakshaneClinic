@@ -11,6 +11,7 @@ interface DoctorCardProps {
   description: string;
   tags: string[];
   themeColor: "indigo" | "emerald";
+  delay?: string;
 }
 
 export default function DoctorCard({
@@ -23,11 +24,15 @@ export default function DoctorCard({
   description,
   tags,
   themeColor,
+  delay = "0s",
 }: DoctorCardProps) {
   const isIndigo = themeColor === "indigo";
   
   return (
-    <div className="bg-slate-50 rounded-[2rem] border border-slate-100 overflow-hidden flex flex-col sm:flex-row group hover:shadow-xl transition-shadow duration-300">
+    <div 
+      className="bg-slate-50 rounded-[2rem] border border-slate-100 overflow-hidden flex flex-col sm:flex-row group hover:shadow-xl transition-all duration-500 opacity-0 animate-fade-in-up"
+      style={{ animationDelay: delay }}
+    >
       <div className={`sm:w-2/5 relative ${isIndigo ? "bg-indigo-100" : "bg-emerald-100"} min-h-[300px] sm:min-h-full flex items-end justify-center pt-8 overflow-hidden`}>
         <Image 
           src={image} 
