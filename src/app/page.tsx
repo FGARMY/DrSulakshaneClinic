@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import TrustBar from "@/components/TrustBar";
 import Services from "@/components/Services";
 import Doctors from "@/components/Doctors";
 import WhyUs from "@/components/WhyUs";
@@ -13,6 +14,7 @@ export default function Home() {
     <main className="min-h-screen relative overflow-hidden bg-slate-50">
       <Navbar />
       <Hero />
+      <TrustBar />
       <Services />
       <Doctors />
       <WhyUs />
