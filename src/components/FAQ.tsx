@@ -54,23 +54,36 @@ export default function FAQ() {
             return (
               <div 
                 key={idx} 
-                className={`border rounded-2xl overflow-hidden transition-all duration-300 ${isOpen ? 'bg-slate-50 border-indigo-100 shadow-sm' : 'bg-white border-slate-100 hover:border-slate-200'}`}
+                className={`border rounded-2xl overflow-hidden transition-all duration-500 ${
+                  isOpen 
+                    ? 'bg-white border-indigo-200 shadow-[0_10px_30px_rgba(79,70,229,0.06)] scale-[1.01]' 
+                    : 'bg-white border-slate-100 hover:border-slate-200'
+                }`}
               >
                 <button 
                   onClick={() => setOpenIdx(isOpen ? -1 : idx)}
-                  className="w-full text-left px-6 py-5 flex items-center justify-between gap-4 focus:outline-none"
+                  className="w-full text-left px-6 md:px-8 py-5 flex items-center justify-between gap-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2"
+                  aria-expanded={isOpen}
                 >
-                  <h3 className={`font-bold text-lg md:text-xl transition-colors ${isOpen ? 'text-indigo-600' : 'text-slate-800'}`}>
+                  <h3 className={`font-bold text-lg md:text-xl transition-colors duration-500 ${isOpen ? 'text-indigo-600' : 'text-slate-800'}`}>
                     {faq.q}
                   </h3>
-                  <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-colors ${isOpen ? 'bg-indigo-100 text-indigo-600' : 'bg-slate-100 text-slate-400'}`}>
+                  <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-500 ${
+                    isOpen 
+                      ? 'bg-indigo-600 text-white rotate-180' 
+                      : 'bg-slate-100 text-slate-400'
+                  }`}>
                     {isOpen ? <Minus size={16} /> : <Plus size={16} />}
                   </div>
                 </button>
                 <div 
-                  className={`px-6 overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 pb-6 opacity-100' : 'max-h-0 opacity-0'}`}
+                  className={`px-6 md:px-8 overflow-hidden transition-all duration-500 ease-in-out ${
+                    isOpen 
+                      ? 'max-h-96 pb-8 opacity-100 translate-y-0' 
+                      : 'max-h-0 opacity-0 -translate-y-4'
+                  }`}
                 >
-                  <p className="text-slate-600 font-light leading-relaxed">
+                  <p className="text-slate-600 font-light leading-relaxed text-base md:text-lg">
                     {faq.a}
                   </p>
                 </div>
