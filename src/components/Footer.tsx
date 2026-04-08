@@ -33,8 +33,8 @@ export default function Footer() {
           
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link href="#home" className="flex items-center gap-2 mb-6 group">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center text-white shadow-lg">
+            <Link href="#home" className="flex items-center gap-2 mb-6 group" aria-label="Dr. Sulakshane Clinic Home">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center text-white shadow-lg" aria-hidden="true">
                 <HeartPulse size={20} />
               </div>
               <span className="font-display font-bold text-xl text-white tracking-tight">
@@ -44,67 +44,84 @@ export default function Footer() {
             <p className="text-slate-400 leading-relaxed font-light mb-8 text-sm">
               Expert surgical and pediatric care for your entire family. Over 23 years of trusted medical practice with compassion at its core.
             </p>
-            <div className="flex items-center gap-4">
-              {[SocialIcons.Facebook, SocialIcons.Instagram, SocialIcons.Youtube, SocialIcons.Linkedin].map((Icon, idx) => (
-                <a key={idx} href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-indigo-600 hover:text-white transition-colors">
-                  <Icon className="w-[18px] h-[18px]" />
-                </a>
-              ))}
-            </div>
+            <nav className="flex items-center gap-4" aria-label="Social Media Links">
+              {[SocialIcons.Facebook, SocialIcons.Instagram, SocialIcons.Youtube, SocialIcons.Linkedin].map((Icon, idx) => {
+                const names = ["Facebook", "Instagram", "Youtube", "Linkedin"];
+                return (
+                  <a 
+                    key={idx} 
+                    href="#" 
+                    className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-indigo-600 hover:text-white transition-colors"
+                    aria-label={`Visit our ${names[idx]} page`}
+                  >
+                    <Icon className="w-[18px] h-[18px]" aria-hidden="true" />
+                  </a>
+                );
+              })}
+            </nav>
           </div>
 
           {/* Quick Links */}
-          <div>
+          <nav aria-label="Quick Links Footer">
             <h4 className="text-white font-bold mb-6 tracking-wide uppercase text-sm">Quick Links</h4>
             <ul className="space-y-4">
               {['Home', 'Services', 'Doctors', 'About Us', 'FAQ'].map(link => (
                 <li key={link}>
-                  <Link href={`#${link.toLowerCase().replace(' ', '-')}`} className="text-slate-400 hover:text-white transition-colors text-sm font-light">
+                  <Link href={`#${link.toLowerCase().replace(' ', '-')}`} className="text-slate-400 hover:text-white transition-colors text-sm font-light" aria-label={`Go to ${link}`}>
                     {link}
                   </Link>
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
 
           {/* Services */}
-          <div>
+          <nav aria-label="Services Navigation Footer">
             <h4 className="text-white font-bold mb-6 tracking-wide uppercase text-sm">Our Services</h4>
             <ul className="space-y-4">
               {['Laparoscopic Surgery', 'General Surgery', 'Breast Surgery', 'Pediatric Care', 'Vaccination'].map(link => (
                 <li key={link}>
-                  <Link href="#services" className="text-slate-400 hover:text-white transition-colors text-sm font-light">
+                  <Link href="#services" className="text-slate-400 hover:text-white transition-colors text-sm font-light" aria-label={`Learn more about ${link}`}>
                     {link}
                   </Link>
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
 
           {/* Contact */}
-          <div>
-            <h4 className="text-white font-bold mb-6 tracking-wide uppercase text-sm">Contact Us</h4>
+          <section aria-labelledby="footer-contact-heading">
+            <h4 id="footer-contact-heading" className="text-white font-bold mb-6 tracking-wide uppercase text-sm">Contact Us</h4>
             <ul className="space-y-5">
               <li className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-indigo-400 flex-shrink-0">
+                <div className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-indigo-400 flex-shrink-0" aria-hidden="true">
                   <MapPin size={18} />
                 </div>
-                <span className="text-slate-400 text-sm font-light leading-relaxed pt-2">Dr. Sulakshane Clinic,<br/>Your City, India</span>
+                <span className="text-slate-400 text-sm font-light leading-relaxed pt-2">
+                  <span className="sr-only">Address: </span>
+                  Dr. Sulakshane Clinic,<br/>Your City, India
+                </span>
               </li>
               <li className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-indigo-400 flex-shrink-0">
+                <div className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-indigo-400 flex-shrink-0" aria-hidden="true">
                   <Phone size={18} />
                 </div>
-                <span className="text-slate-400 text-sm font-light leading-relaxed pt-2.5">+91 XXXXX XXXXX</span>
+                <span className="text-slate-400 text-sm font-light leading-relaxed pt-2.5">
+                  <span className="sr-only">Phone: </span>
+                  +91 XXXXX XXXXX
+                </span>
               </li>
               <li className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-indigo-400 flex-shrink-0">
+                <div className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-indigo-400 flex-shrink-0" aria-hidden="true">
                   <Mail size={18} />
                 </div>
-                <span className="text-slate-400 text-sm font-light leading-relaxed pt-2.5">contact@drsulakshane.com</span>
+                <span className="text-slate-400 text-sm font-light leading-relaxed pt-2.5">
+                  <span className="sr-only">Email: </span>
+                  contact@drsulakshane.com
+                </span>
               </li>
             </ul>
-          </div>
+          </section>
 
         </div>
 
