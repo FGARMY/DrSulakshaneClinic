@@ -3,6 +3,7 @@ import { Inter, Poppins, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import ScrollToTop from "@/components/ScrollToTop";
 import ScrollProgress from "@/components/ScrollProgress";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -49,10 +50,25 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${poppins.variable} ${playfair.variable} font-sans scroll-smooth`}
     >
-      <body className="antialiased bg-slate-50 text-slate-800">
-        <ScrollProgress />
-        {children}
-        <ScrollToTop />
+      <body className="antialiased bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-200 transition-colors duration-300">
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <a 
+            href="#main-content" 
+            className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-primary focus:text-white focus:px-6 focus:py-3 focus:rounded-xl focus:font-bold focus:shadow-2xl"
+          >
+            Skip to Content
+          </a>
+          <ScrollProgress />
+          <div id="main-content">
+            {children}
+          </div>
+          <ScrollToTop />
+        </ThemeProvider>
       </body>
     </html>
   );
