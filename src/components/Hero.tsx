@@ -4,29 +4,29 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="relative w-full min-h-[100dvh] bg-gradient-to-b from-blue-700 via-blue-600 to-slate-50 flex flex-col justify-center overflow-hidden">
+    <section className="relative w-full min-h-[100dvh] bg-gradient-to-b from-blue-700 via-blue-600 to-slate-50 dark:to-slate-950 flex flex-col justify-center overflow-hidden transition-colors duration-500">
       
       {/* Dynamic Background Elements */}
       <div className="absolute inset-0 bg-[url('/images/grid.svg')] opacity-10 mix-blend-overlay pointer-events-none"></div>
       
       {/* Animated Light Leaks */}
-      <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-indigo-500/20 blur-[120px] rounded-full pointer-events-none animate-pulse duration-[10000ms]"></div>
-      <div className="absolute bottom-[20%] right-[-5%] w-[40%] h-[40%] bg-blue-400/10 blur-[100px] rounded-full pointer-events-none"></div>
+      <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-indigo-500/20 dark:bg-indigo-600/10 blur-[120px] rounded-full pointer-events-none animate-pulse duration-[10000ms]"></div>
+      <div className="absolute bottom-[20%] right-[-5%] w-[40%] h-[40%] bg-blue-400/10 dark:bg-blue-500/5 blur-[100px] rounded-full pointer-events-none"></div>
 
       {/* Floating Medical Particles */}
-      <div className="absolute top-[15%] left-[5%] text-white/10 animate-float pointer-events-none hidden lg:block" style={{ animationDelay: '0s' }}>
+      <div className="absolute top-[15%] left-[5%] text-white/10 dark:text-white/5 animate-float pointer-events-none hidden lg:block" style={{ animationDelay: '0s' }}>
         <HeartPulse size={48} />
       </div>
-      <div className="absolute top-[60%] left-[40%] text-white/5 animate-float pointer-events-none hidden lg:block" style={{ animationDelay: '2s' }}>
+      <div className="absolute top-[60%] left-[40%] text-white/5 dark:text-white/5 animate-float pointer-events-none hidden lg:block" style={{ animationDelay: '2s' }}>
         <Activity size={32} />
       </div>
-      <div className="absolute top-[20%] right-[15%] text-white/10 animate-float pointer-events-none hidden lg:block" style={{ animationDelay: '4s' }}>
+      <div className="absolute top-[20%] right-[15%] text-white/10 dark:text-white/5 animate-float pointer-events-none hidden lg:block" style={{ animationDelay: '4s' }}>
         <ShieldPlus size={40} />
       </div>
       
       {/* Decorative Crosses */}
-      <div className="absolute top-[25%] left-[12%] text-white/20 font-light text-6xl pointer-events-none select-none opacity-50">+</div>
-      <div className="absolute bottom-[35%] left-[30%] text-white/10 font-light text-4xl pointer-events-none select-none opacity-30">+</div>
+      <div className="absolute top-[25%] left-[12%] text-white/20 dark:text-white/5 font-light text-6xl pointer-events-none select-none opacity-50">+</div>
+      <div className="absolute bottom-[35%] left-[30%] text-white/10 dark:text-white/5 font-light text-4xl pointer-events-none select-none opacity-30">+</div>
 
       <div className="container mx-auto max-w-7xl relative z-10 w-full flex flex-col lg:flex-row items-center px-4 sm:px-6 lg:px-12 pt-24 sm:pt-28 lg:pt-20 h-full min-h-[100dvh]">
           
@@ -42,16 +42,16 @@ export default function Hero() {
           <div className="flex flex-col gap-4 sm:gap-6 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
             <h1 className="text-white font-display text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] sm:leading-[1.05] tracking-tightest">
               We bring <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-100 to-white">professional</span> <br />
-              medical <span className="italic font-light opacity-90 text-blue-100">support.</span>
+              medical <span className="italic font-light opacity-90 text-blue-100 dark:text-blue-200">support.</span>
             </h1>
             
-            <p className="text-blue-50/90 text-xs sm:text-base md:text-lg max-w-lg leading-relaxed font-light mx-0 lg:mx-0 tracking-wide">
+            <p className="text-blue-50/90 dark:text-blue-100/80 text-xs sm:text-base md:text-lg max-w-lg leading-relaxed font-light mx-0 lg:mx-0 tracking-wide">
               Delivering comprehensive surgical and pediatric care through our innovative approach that seamlessly connects your health needs.
             </p>
           </div>
   
           <div className="flex flex-col sm:flex-row items-stretch sm:items-start gap-4 sm:gap-5 mt-2 w-full sm:w-auto opacity-0 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
-            <Link href="#appointments" className="px-8 sm:px-10 py-4 sm:py-5 rounded-full bg-slate-900 text-white font-bold hover:bg-slate-800 transition-all shadow-2xl text-sm sm:text-base text-center flex items-center justify-center gap-2 group transform active:scale-95">
+            <Link href="#appointments" className="px-8 sm:px-10 py-4 sm:py-5 rounded-full bg-slate-900 border border-slate-800 dark:border-slate-700 text-white font-bold hover:bg-slate-800 dark:hover:bg-slate-800 transition-all shadow-2xl text-sm sm:text-base text-center flex items-center justify-center gap-2 group transform active:scale-95">
               Book Appointment
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform sm:w-5 sm:h-5" />
             </Link>
@@ -64,7 +64,7 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row items-center gap-4 mt-6 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.7s' }}>
             <div className="flex -space-x-4 overflow-hidden p-0.5">
               {[1, 2, 3, 4].map((i) => (
-                <div key={i} className="inline-block h-12 w-12 rounded-full ring-2 ring-blue-400 bg-white/20 backdrop-blur-md overflow-hidden flex items-center justify-center relative">
+                <div key={i} className="inline-block h-12 w-12 rounded-full ring-2 ring-blue-400 dark:ring-blue-600 bg-white/20 backdrop-blur-md overflow-hidden flex items-center justify-center relative">
                   <Image 
                     src={`https://i.pravatar.cc/150?u=medical-user-${i}`} 
                     alt={`Patient testimonial user avatar ${i}`} 
@@ -82,7 +82,7 @@ export default function Hero() {
                 ))}
                 <span className="text-white font-bold ml-1 text-sm tracking-tight">4.9/5.0</span>
               </div>
-              <p className="text-blue-100/80 text-[10px] font-bold uppercase tracking-[0.15em] leading-none mt-1.5">15,000+ Happy Patients Treated</p>
+              <p className="text-blue-100/80 dark:text-blue-100/60 text-[10px] font-bold uppercase tracking-[0.15em] leading-none mt-1.5">15,000+ Happy Patients Treated</p>
             </div>
           </div>
 
@@ -97,7 +97,7 @@ export default function Hero() {
                 alt="Dr. Sulakshane & Team"
                 width={1600}
                 height={1200}
-                className="w-auto h-full max-h-[85%] lg:max-h-[100%] object-contain object-center drop-shadow-[0_20px_100px_rgba(255,255,255,0.1)] lg:drop-shadow-[0_20px_100px_rgba(37,99,235,0.35)] z-20 scale-[1.1] sm:scale-[1.25] lg:scale-[2.05] origin-center pointer-events-auto transition-all duration-[1200ms] animate-float flex-shrink-0"
+                className="w-auto h-full max-h-[85%] lg:max-h-[100%] object-contain object-center drop-shadow-[0_20px_100px_rgba(255,255,255,0.1)] lg:drop-shadow-[0_20px_100px_rgba(37,99,235,0.35)] dark:drop-shadow-[0_20px_100px_rgba(37,99,235,0.15)] z-20 scale-[1.1] sm:scale-[1.25] lg:scale-[2.05] origin-center pointer-events-auto transition-all duration-[1200ms] animate-float flex-shrink-0"
                 priority
               />
             </div>
