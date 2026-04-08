@@ -65,7 +65,7 @@ export default function Hero() {
             <div className="flex -space-x-4 overflow-hidden p-0.5">
               {[1, 2, 3, 4].map((i) => (
                 <div key={i} className="inline-block h-12 w-12 rounded-full ring-2 ring-blue-400 bg-white/20 backdrop-blur-md overflow-hidden flex items-center justify-center">
-                  <img src={`https://i.pravatar.cc/150?u=medical-user-${i}`} alt="user" className="h-full w-full object-cover" />
+                  <img src={`https://i.pravatar.cc/150?u=medical-user-${i}`} alt={`Patient testimonial user avatar ${i}`} className="h-full w-full object-cover" />
                 </div>
               ))}
             </div>
