@@ -1,3 +1,4 @@
+import Script from "next/script";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import TrustBar from "@/components/TrustBar";
@@ -42,7 +43,8 @@ export default function Home() {
 
   return (
     <main className="min-h-screen relative overflow-hidden bg-slate-50">
-      <script
+      <Script
+        id="json-ld"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
