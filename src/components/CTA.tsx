@@ -26,7 +26,7 @@ export default function CTA() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
           {/* Left — CTA Text */}
-          <div className="text-center lg:text-left opacity-0 animate-slide-in-left" style={{ animationDelay: '0.2s' }}>
+          <div className="text-center lg:text-left animate-slide-in-left" style={{ animationDelay: '0.2s' }}>
             <div className="inline-flex items-center gap-2 glass-float text-white px-5 py-2 rounded-full font-bold text-xs uppercase tracking-wider mb-8">
               <CalendarPlus size={14} />
               Book in Seconds
@@ -52,7 +52,7 @@ export default function CTA() {
           </div>
 
           {/* Right — Form */}
-          <div className="opacity-0 animate-slide-in-right" style={{ animationDelay: '0.4s' }}>
+          <div className="animate-slide-in-right" style={{ animationDelay: '0.4s' }}>
             <div className="glass-card-strong rounded-3xl p-8 md:p-10 shadow-2xl">
               <h3 className="font-display font-bold text-xl text-slate-900 mb-6">
                 Quick Appointment

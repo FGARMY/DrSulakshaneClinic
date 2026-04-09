@@ -32,7 +32,7 @@ export default function Doctors() {
       <div className="container mx-auto max-w-7xl">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 opacity-0 animate-fade-in-up">
+        <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-in-up">
           <div className="inline-flex items-center gap-2 bg-indigo-50 text-indigo-600 px-4 py-2 rounded-full font-semibold text-sm mb-6">
             <Stethoscope size={16} />
             Our Specialists
@@ -50,7 +50,7 @@ export default function Doctors() {
           {doctors.map((doc, idx) => (
             <div 
               key={doc.name}
-              className="glass-card-strong rounded-3xl overflow-hidden group hover:shadow-xl transition-all duration-500 opacity-0 animate-fade-in-up"
+              className="glass-card-strong rounded-3xl overflow-hidden group hover:shadow-xl transition-all duration-500 animate-fade-in-up"
               style={{ animationDelay: `${0.2 + idx * 0.2}s` }}
             >
               <div className="flex flex-col sm:flex-row">

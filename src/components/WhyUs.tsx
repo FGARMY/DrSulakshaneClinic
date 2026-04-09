@@ -37,7 +37,7 @@ export default function WhyUs() {
       <div className="container mx-auto max-w-7xl">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 opacity-0 animate-fade-in-up">
+        <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-in-up">
           <div className="inline-flex items-center gap-2 bg-indigo-50 text-indigo-600 px-4 py-2 rounded-full font-semibold text-sm mb-6">
             <Heart size={16} />
             Why Choose Us
@@ -55,7 +55,7 @@ export default function WhyUs() {
           {reasons.map((item, idx) => (
             <div 
               key={idx} 
-              className="glass-card-strong rounded-3xl p-8 text-center group hover:shadow-xl hover:-translate-y-2 transition-all duration-500 opacity-0 animate-fade-in-up cursor-default"
+              className="glass-card-strong rounded-3xl p-8 text-center group hover:shadow-xl hover:-translate-y-2 transition-all duration-500 animate-fade-in-up cursor-default"
               style={{ animationDelay: `${(idx + 1) * 0.15}s` }}
             >
               <div className={`w-16 h-16 rounded-2xl ${item.light} flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>

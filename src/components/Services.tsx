@@ -40,7 +40,7 @@ export default function Services() {
       <div className="container mx-auto max-w-7xl">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 opacity-0 animate-fade-in-up">
+        <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-in-up">
           <div className="inline-flex items-center gap-2 bg-indigo-50 text-indigo-600 px-4 py-2 rounded-full font-semibold text-sm mb-6">
             <Stethoscope size={16} />
             Our Services
@@ -58,7 +58,7 @@ export default function Services() {
           {services.map((service, idx) => (
             <div 
               key={idx}
-              className="group glass-card-strong rounded-3xl p-8 hover:shadow-xl hover:-translate-y-2 transition-all duration-500 flex flex-col opacity-0 animate-fade-in-up"
+              className="group glass-card-strong rounded-3xl p-8 hover:shadow-xl hover:-translate-y-2 transition-all duration-500 flex flex-col animate-fade-in-up"
               style={{ animationDelay: `${(idx + 1) * 0.1}s` }}
             >
               <div className={`w-14 h-14 rounded-2xl flex items-center justify-center transition-all duration-300 mb-6 ${service.color}`}>

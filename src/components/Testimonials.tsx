@@ -35,7 +35,7 @@ export default function Testimonials() {
       <div className="container mx-auto max-w-7xl relative z-10">
 
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 opacity-0 animate-fade-in-up">
+        <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-in-up">
           <div className="inline-flex items-center gap-2 glass-float text-white px-4 py-2 rounded-full font-semibold text-sm mb-6">
             <Star size={16} className="fill-amber-400 text-amber-400" />
             Testimonials
@@ -53,7 +53,7 @@ export default function Testimonials() {
           {reviews.map((rev, idx) => (
             <div
               key={idx}
-              className="glass-float rounded-3xl p-8 flex flex-col group hover:-translate-y-2 transition-all duration-500 opacity-0 animate-fade-in-up"
+              className="glass-float rounded-3xl p-8 flex flex-col group hover:-translate-y-2 transition-all duration-500 animate-fade-in-up"
               style={{ animationDelay: `${(idx + 1) * 0.15}s` }}
             >
               {/* Quote Icon */}
