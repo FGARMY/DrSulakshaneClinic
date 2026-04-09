@@ -1,90 +1,155 @@
-import { Star, Quote } from "lucide-react";
+"use client";
+
+import { useState } from "react";
+import { Star, ChevronLeft, ChevronRight } from "lucide-react";
+
+/**
+ * Testimonials — horizontal carousel (5 slots) with star rating,
+ * patient name, optional photo initial, and navigation arrows.
+ */
+
+interface Review {
+  text: string;
+  author: string;
+  initials: string;
+  stars: number;
+}
+
+const REVIEWS: Review[] = [
+  {
+    text: "Dr. Swati performed my laparoscopic surgery. I was walking the next day — her skill is remarkable. The whole team made me feel safe.",
+    author: "Rekha P.",
+    initials: "RP",
+    stars: 5,
+  },
+  {
+    text: "Dr. Mahesh is the best paediatrician we've ever visited. My daughter actually looks forward to check-ups now!",
+    author: "Amit J.",
+    initials: "AJ",
+    stars: 5,
+  },
+  {
+    text: "Having both a surgeon and paediatrician in one clinic is incredibly convenient. Both doctors are thorough and caring.",
+    author: "Sunita M.",
+    initials: "SM",
+    stars: 5,
+  },
+  {
+    text: "The vaccination process was smooth and well-organised. Dr. Mahesh explained everything clearly — no unnecessary medications.",
+    author: "Priya K.",
+    initials: "PK",
+    stars: 5,
+  },
+  {
+    text: "I came in for a hernia consultation. Dr. Swati explained the laparoscopic option clearly and the surgery was flawless. Highly recommend!",
+    author: "Nilesh R.",
+    initials: "NR",
+    stars: 5,
+  },
+];
 
 export default function Testimonials() {
-  const reviews = [
-    {
-      text: "Dr. Swati performed my laparoscopic surgery and I was back on my feet within days. Her expertise and calm demeanor made the experience stress-free.",
-      author: "Rekha Patil",
-      role: "Surgery Patient",
-      initials: "RP",
-      color: "bg-indigo-100 text-indigo-600",
-    },
-    {
-      text: "Dr. Mahesh has been our family pediatrician for over 10 years. His patience with children and thorough diagnosis gives us complete peace of mind.",
-      author: "Amit Joshi",
-      role: "Parent of Two",
-      initials: "AJ",
-      color: "bg-emerald-100 text-emerald-600",
-    },
-    {
-      text: "Having a surgeon and pediatrician under one roof is incredibly convenient. Both doctors are professional and caring. We trust them completely.",
-      author: "Sunita Mhatre",
-      role: "Family Patient",
-      initials: "SM",
-      color: "bg-amber-100 text-amber-600",
-    },
-  ];
+  const [current, setCurrent] = useState(0);
+
+  const prev = () => setCurrent((c) => (c === 0 ? REVIEWS.length - 1 : c - 1));
+  const next = () => setCurrent((c) => (c === REVIEWS.length - 1 ? 0 : c + 1));
 
   return (
-    <section id="testimonials" className="section-padding gradient-hero grid-overlay relative overflow-hidden">
-      
-      {/* Decorative blobs */}
-      <div className="absolute top-[-20%] left-[-10%] w-[400px] h-[400px] bg-purple-400/10 rounded-full blur-[120px] pointer-events-none"></div>
-      <div className="absolute bottom-[-20%] right-[-10%] w-[400px] h-[400px] bg-blue-400/10 rounded-full blur-[120px] pointer-events-none"></div>
-
-      <div className="container mx-auto max-w-7xl relative z-10">
-
+    <section
+      id="testimonials"
+      className="py-20 md:py-28 bg-white"
+      aria-labelledby="testimonials-heading"
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-in-up">
-          <div className="inline-flex items-center gap-2 glass-float text-white px-4 py-2 rounded-full font-semibold text-sm mb-6">
-            <Star size={16} className="fill-amber-400 text-amber-400" />
-            Testimonials
-          </div>
-          <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-6 tracking-tight">
-            What Our Patients Say
+        <div className="text-center max-w-2xl mx-auto mb-14 animate-fade-in-up">
+          <p className="text-teal font-semibold text-sm tracking-wide uppercase mb-3">
+            Patient Stories
+          </p>
+          <h2
+            id="testimonials-heading"
+            className="text-3xl md:text-4xl font-bold text-navy tracking-tight mb-4"
+          >
+            What Families Say
           </h2>
-          <p className="text-lg text-blue-100/70 font-light leading-relaxed">
-            Real stories from families who trust us with their health.
+          <p className="text-slate-500 leading-relaxed">
+            Real feedback from patients who trust us with their health.
           </p>
         </div>
 
-        {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {reviews.map((rev, idx) => (
-            <div
-              key={idx}
-              className="glass-float rounded-3xl p-8 flex flex-col group hover:-translate-y-2 transition-all duration-500 animate-fade-in-up"
-              style={{ animationDelay: `${(idx + 1) * 0.15}s` }}
-            >
-              {/* Quote Icon */}
-              <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center mb-6">
-                <Quote size={20} className="text-white/60" />
-              </div>
-
-              {/* Stars */}
-              <div className="flex gap-1 mb-5">
-                {[1, 2, 3, 4, 5].map(star => (
-                  <Star key={star} size={16} className="fill-amber-400 text-amber-400" />
-                ))}
-              </div>
-
-              {/* Review Text */}
-              <p className="text-white/90 font-light leading-relaxed mb-8 flex-grow text-sm sm:text-base">
-                &ldquo;{rev.text}&rdquo;
-              </p>
-
-              {/* Author */}
-              <div className="flex items-center gap-4 mt-auto pt-6 border-t border-white/10">
-                <div className={`w-11 h-11 rounded-xl flex items-center justify-center font-bold text-sm ${rev.color}`}>
-                  {rev.initials}
-                </div>
-                <div>
-                  <h4 className="font-bold text-white text-sm">{rev.author}</h4>
-                  <p className="text-sm text-white/50">{rev.role}</p>
-                </div>
-              </div>
+        {/* Carousel */}
+        <div className="relative max-w-3xl mx-auto">
+          {/* Card */}
+          <div
+            className="bg-slate-50 border border-slate-200 rounded-2xl p-8 sm:p-10 min-h-[220px] flex flex-col items-center text-center transition-all"
+            role="group"
+            aria-roledescription="slide"
+            aria-label={`Testimonial ${current + 1} of ${REVIEWS.length}`}
+          >
+            {/* Stars */}
+            <div className="flex gap-0.5 mb-5" aria-label={`${REVIEWS[current].stars} out of 5 stars`}>
+              {Array.from({ length: 5 }).map((_, i) => (
+                <Star
+                  key={i}
+                  size={18}
+                  className={`${
+                    i < REVIEWS[current].stars
+                      ? "fill-amber-400 text-amber-400"
+                      : "text-slate-200"
+                  }`}
+                  aria-hidden="true"
+                />
+              ))}
             </div>
-          ))}
+
+            {/* Quote */}
+            <blockquote className="text-navy text-base sm:text-lg leading-relaxed mb-6 italic max-w-xl">
+              &ldquo;{REVIEWS[current].text}&rdquo;
+            </blockquote>
+
+            {/* Author */}
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-teal-50 text-teal font-bold text-sm flex items-center justify-center">
+                {REVIEWS[current].initials}
+              </div>
+              <span className="font-semibold text-navy text-sm">
+                {REVIEWS[current].author}
+              </span>
+            </div>
+          </div>
+
+          {/* Navigation */}
+          <div className="flex items-center justify-center gap-4 mt-6">
+            <button
+              onClick={prev}
+              className="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center hover:bg-slate-50 transition-colors"
+              aria-label="Previous testimonial"
+            >
+              <ChevronLeft size={18} />
+            </button>
+
+            {/* Dots */}
+            <div className="flex gap-1.5">
+              {REVIEWS.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrent(i)}
+                  className={`w-2 h-2 rounded-full transition-all ${
+                    i === current ? "bg-teal w-6" : "bg-slate-300"
+                  }`}
+                  aria-label={`Go to testimonial ${i + 1}`}
+                />
+              ))}
+            </div>
+
+            <button
+              onClick={next}
+              className="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center hover:bg-slate-50 transition-colors"
+              aria-label="Next testimonial"
+            >
+              <ChevronRight size={18} />
+            </button>
+          </div>
         </div>
       </div>
     </section>
