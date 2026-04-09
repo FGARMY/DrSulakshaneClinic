@@ -1,114 +1,137 @@
-import { ArrowRight, Star, HeartPulse, ShieldPlus, Activity, Sparkles } from "lucide-react";
+import { ArrowRight, Phone, Users, HeartHandshake, PhoneCall } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="relative w-full min-h-[100dvh] bg-gradient-to-b from-blue-700 via-blue-600 to-slate-50 dark:to-slate-950 flex flex-col justify-center overflow-hidden transition-colors duration-500">
+    <section id="home" className="relative w-full min-h-[100dvh] gradient-hero grid-overlay flex items-center overflow-hidden">
       
-      {/* Dynamic Background Elements */}
-      <div className="absolute inset-0 bg-[url('/images/grid.svg')] opacity-10 mix-blend-overlay pointer-events-none"></div>
-      
-      {/* Animated Light Leaks */}
-      <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-indigo-500/20 dark:bg-indigo-600/10 blur-[120px] rounded-full pointer-events-none animate-pulse duration-[10000ms]"></div>
-      <div className="absolute bottom-[20%] right-[-5%] w-[40%] h-[40%] bg-blue-400/10 dark:bg-blue-500/5 blur-[100px] rounded-full pointer-events-none"></div>
+      {/* Decorative Blobs */}
+      <div className="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] bg-purple-400/20 rounded-full blur-[120px] pointer-events-none"></div>
+      <div className="absolute bottom-[-15%] left-[-10%] w-[500px] h-[500px] bg-blue-400/15 rounded-full blur-[100px] pointer-events-none"></div>
 
-      {/* Floating Medical Particles */}
-      <div className="absolute top-[15%] left-[5%] text-white/10 dark:text-white/5 animate-float pointer-events-none hidden lg:block" style={{ animationDelay: '0s' }}>
-        <HeartPulse size={48} />
-      </div>
-      <div className="absolute top-[60%] left-[40%] text-white/5 dark:text-white/5 animate-float pointer-events-none hidden lg:block" style={{ animationDelay: '2s' }}>
-        <Activity size={32} />
-      </div>
-      <div className="absolute top-[20%] right-[15%] text-white/10 dark:text-white/5 animate-float pointer-events-none hidden lg:block" style={{ animationDelay: '4s' }}>
-        <ShieldPlus size={40} />
-      </div>
-      
-      {/* Decorative Crosses */}
-      <div className="absolute top-[25%] left-[12%] text-white/20 dark:text-white/5 font-light text-6xl pointer-events-none select-none opacity-50">+</div>
-      <div className="absolute bottom-[35%] left-[30%] text-white/10 dark:text-white/5 font-light text-4xl pointer-events-none select-none opacity-30">+</div>
-
-      <div className="container mx-auto max-w-7xl relative z-10 w-full flex flex-col lg:flex-row items-center px-4 sm:px-6 lg:px-12 pt-24 sm:pt-28 lg:pt-20 h-full min-h-[100dvh]">
+      <div className="container mx-auto max-w-7xl relative z-10 w-full px-4 sm:px-6 lg:px-12 pt-32 pb-32 lg:pt-0 lg:pb-0">
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-8 lg:min-h-[100dvh]">
           
-        {/* Left Content - Fluid Typography */}
-        <div className="w-full lg:w-1/2 relative z-20 flex flex-col gap-6 sm:gap-8 text-left items-start pt-4 sm:pt-6 lg:pt-0 lg:-mt-20">
-          
-          <div className="bg-white/15 backdrop-blur-xl border border-white/20 text-white text-[10px] sm:text-xs md:text-sm font-semibold px-4 sm:px-5 py-1.5 sm:py-2 rounded-full inline-flex items-center w-fit shadow-xl opacity-0 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-            <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-green-400 mr-2 sm:mr-3 animate-pulse ring-4 ring-green-400/20"></span>
-            #1 TRUSTED CLINIC IN THE CITY
-            <Sparkles size={12} className="ml-2 text-amber-300 sm:w-3.5 sm:h-3.5" />
-          </div>
- 
-          <div className="flex flex-col gap-4 sm:gap-6 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-            <h1 className="text-white font-display text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] sm:leading-[1.05] tracking-tightest">
-              We bring <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-100 to-white">professional</span> <br />
-              medical <span className="italic font-light opacity-90 text-blue-100 dark:text-blue-200">support.</span>
-            </h1>
+          {/* Left Content */}
+          <div className="w-full lg:w-1/2 relative z-20 flex flex-col gap-6 text-left items-start lg:py-20">
             
-            <p className="text-blue-50/90 dark:text-blue-100/80 text-xs sm:text-base md:text-lg max-w-lg leading-relaxed font-light mx-0 lg:mx-0 tracking-wide">
-              Delivering comprehensive surgical and pediatric care through our innovative approach that seamlessly connects your health needs.
-            </p>
-          </div>
-  
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-start gap-4 sm:gap-5 mt-2 w-full sm:w-auto opacity-0 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
-            <Link href="#appointments" className="px-8 sm:px-10 py-4 sm:py-5 rounded-full bg-slate-900 border border-slate-800 dark:border-slate-700 text-white font-bold hover:bg-slate-800 dark:hover:bg-slate-800 transition-all shadow-2xl text-sm sm:text-base text-center flex items-center justify-center gap-2 group transform active:scale-95">
-              Book Appointment
-              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform sm:w-5 sm:h-5" />
-            </Link>
-            <Link href="#services" className="px-8 sm:px-10 py-4 sm:py-5 rounded-full border border-white/35 text-white font-bold hover:bg-white/10 transition-all text-sm sm:text-base text-center hover:shadow-lg">
-              Explore Services
-            </Link>
-          </div>
+            {/* Badge */}
+            <div className="glass-float text-white text-xs sm:text-sm font-semibold px-5 py-2.5 rounded-full inline-flex items-center w-fit opacity-0 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+              <span className="w-2 h-2 rounded-full bg-emerald-400 mr-3 animate-pulse ring-4 ring-emerald-400/20"></span>
+              Trusted Clinic in Aundh, Pune
+            </div>
  
-          {/* Optimized Social Proof Badge for all backgrounds */}
-          <div className="flex flex-col sm:flex-row items-center gap-4 mt-6 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.7s' }}>
-            <div className="flex -space-x-4 overflow-hidden p-0.5">
-              {[1, 2, 3, 4].map((i) => (
-                <div key={i} className="inline-block h-12 w-12 rounded-full ring-2 ring-blue-400 dark:ring-blue-600 bg-white/20 backdrop-blur-md overflow-hidden flex items-center justify-center relative">
-                  <Image 
-                    src={`https://i.pravatar.cc/150?u=medical-user-${i}`} 
-                    alt={`Patient testimonial user avatar ${i}`} 
-                    fill
-                    sizes="48px"
-                    className="object-cover"
-                  />
+            {/* Headline */}
+            <div className="flex flex-col gap-5 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+              <h1 className="text-white font-display text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] xl:text-6xl font-bold leading-[1.1] tracking-tight">
+                We provide{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-purple-200">
+                  trusted
+                </span>{" "}
+                medical care for your family.
+              </h1>
+              
+              <p className="text-blue-100/90 text-sm sm:text-base md:text-lg max-w-lg leading-relaxed">
+                15+ years experience &bull; 5.0 rated clinic &bull; Pediatric & Surgical care with personalized attention
+              </p>
+            </div>
+  
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mt-2 w-full sm:w-auto opacity-0 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
+              <Link 
+                href="#appointment" 
+                className="px-8 py-4 rounded-xl bg-white text-indigo-700 font-bold hover:bg-slate-50 transition-all shadow-2xl text-sm sm:text-base text-center flex items-center justify-center gap-2 group active:scale-95"
+              >
+                Book Appointment
+                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+              </Link>
+              <a 
+                href="tel:+919876543210" 
+                className="px-8 py-4 rounded-xl glass-float text-white font-bold hover:bg-white/25 transition-all text-sm sm:text-base text-center flex items-center justify-center gap-2"
+              >
+                <PhoneCall size={18} />
+                Call Now
+              </a>
+            </div>
+
+            {/* Floating Stats — Mobile (below buttons) */}
+            <div className="flex flex-wrap gap-4 mt-4 lg:hidden opacity-0 animate-fade-in-up" style={{ animationDelay: '0.7s' }}>
+              <div className="glass-float rounded-xl px-4 py-3 flex items-center gap-3">
+                <div className="w-9 h-9 rounded-lg bg-emerald-500/20 flex items-center justify-center text-emerald-300">
+                  <Users size={18} />
                 </div>
-              ))}
-            </div>
-            <div className="text-left">
-              <div className="flex items-center justify-start gap-1">
-                {[1, 2, 3, 4, 5].map((s) => (
-                  <Star key={s} size={14} className="fill-amber-400 text-amber-400" />
-                ))}
-                <span className="text-white font-bold ml-1 text-sm tracking-tight">4.9/5.0</span>
+                <div>
+                  <p className="text-white font-bold text-sm">1500+</p>
+                  <p className="text-white/60 text-[11px]">Happy Patients</p>
+                </div>
               </div>
-              <p className="text-blue-100/80 dark:text-blue-100/60 text-[10px] font-bold uppercase tracking-[0.15em] leading-none mt-1.5">15,000+ Happy Patients Treated</p>
+              <div className="glass-float rounded-xl px-4 py-3 flex items-center gap-3">
+                <div className="w-9 h-9 rounded-lg bg-blue-500/20 flex items-center justify-center text-blue-300">
+                  <HeartHandshake size={18} />
+                </div>
+                <div>
+                  <p className="text-white font-bold text-sm">24/7</p>
+                  <p className="text-white/60 text-[11px]">Emergency</p>
+                </div>
+              </div>
             </div>
+
           </div>
 
-        </div>
-
-        {/* Right Content - Doctors Stacking on Mobile */}
-        <div className="w-full lg:w-1/2 h-full relative lg:absolute lg:right-0 lg:inset-y-0 flex lg:items-center justify-center lg:justify-end pointer-events-none z-10 mt-12 lg:mt-0">
-          <div className="relative w-full h-[60vh] sm:h-[70vh] lg:h-full flex items-center justify-center lg:justify-end lg:-mr-24 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-            <div className="relative w-full h-full flex items-center justify-center lg:justify-end">
+          {/* Right Content — Doctor Image */}
+          <div className="w-full lg:w-1/2 relative flex items-end justify-center z-10">
+            <div className="relative opacity-0 animate-slide-in-right" style={{ animationDelay: '0.4s' }}>
               <Image
-                src="/images/updated-doctors-hero.png"
-                alt="Dr. Sulakshane & Team"
-                width={1600}
-                height={1200}
-                className="w-auto h-full max-h-[85%] lg:max-h-[100%] object-contain object-center drop-shadow-[0_20px_100px_rgba(255,255,255,0.1)] lg:drop-shadow-[0_20px_100px_rgba(37,99,235,0.35)] dark:drop-shadow-[0_20px_100px_rgba(37,99,235,0.15)] z-20 scale-[1.1] sm:scale-[1.25] lg:scale-[2.05] origin-center pointer-events-auto transition-all duration-[1200ms] animate-float flex-shrink-0"
+                src="/images/hero-doctor-transparent.png"
+                alt="Dr. Sulakshane - Trusted Doctor in Aundh, Pune"
+                width={600}
+                height={700}
+                className="w-full max-w-[500px] h-auto object-contain drop-shadow-2xl"
                 priority
               />
+              
+              {/* Floating Glass Cards — Desktop only */}
+              <div className="hidden lg:flex absolute top-[10%] -left-12 glass-float rounded-2xl px-4 py-3 items-center gap-3 animate-float">
+                <div className="w-10 h-10 rounded-xl bg-emerald-500/20 flex items-center justify-center text-emerald-300">
+                  <Users size={20} />
+                </div>
+                <div>
+                  <p className="text-white font-bold text-sm">1500+</p>
+                  <p className="text-white/60 text-xs">Happy Patients</p>
+                </div>
+              </div>
+              
+              <div className="hidden lg:flex absolute top-[42%] -right-12 glass-float rounded-2xl px-4 py-3 items-center gap-3 animate-float-delayed">
+                <div className="w-10 h-10 rounded-xl bg-blue-500/20 flex items-center justify-center text-blue-300">
+                  <HeartHandshake size={20} />
+                </div>
+                <div>
+                  <p className="text-white font-bold text-sm">24/7</p>
+                  <p className="text-white/60 text-xs">Emergency Guidance</p>
+                </div>
+              </div>
+
+              <div className="hidden lg:flex absolute bottom-[12%] -left-12 glass-float rounded-2xl px-4 py-3 items-center gap-3 animate-float">
+                <div className="w-10 h-10 rounded-xl bg-purple-500/20 flex items-center justify-center text-purple-300">
+                  <Phone size={20} />
+                </div>
+                <div>
+                  <p className="text-white font-bold text-sm">+91 98765 43210</p>
+                  <p className="text-white/60 text-xs">Call Anytime</p>
+                </div>
+              </div>
             </div>
           </div>
+
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-2 opacity-50 text-white animate-bounce pointer-events-none">
-        <span className="text-[10px] uppercase tracking-widest font-bold">Scroll</span>
-        <div className="w-[1px] h-12 bg-gradient-to-b from-white to-transparent"></div>
+      {/* Bottom Curve */}
+      <div className="absolute bottom-0 left-0 w-full overflow-hidden z-20">
+        <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto">
+          <path d="M0 80L1440 80L1440 0C1440 0 1080 60 720 60C360 60 0 0 0 0L0 80Z" fill="#f8fafc"/>
+        </svg>
       </div>
 
     </section>

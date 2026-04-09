@@ -1,28 +1,27 @@
 import Script from "next/script";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import Services from "@/components/Services";
+import SocialProof from "@/components/SocialProof";
 import Doctors from "@/components/Doctors";
 import WhyUs from "@/components/WhyUs";
-import CTA from "@/components/CTA";
+import Services from "@/components/Services";
 import Testimonials from "@/components/Testimonials";
-import FAQ from "@/components/FAQ";
-import Resources from "@/components/Resources";
-import Contact from "@/components/Contact";
+import CTA from "@/components/CTA";
+import Location from "@/components/Location";
 import Footer from "@/components/Footer";
 
 export default function Home() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "MedicalClinic",
-    "name": "Dr. Sulakshane Clinic",
+    "name": "Dr. Sulakshane Multi Speciality Clinic",
     "image": "https://drsulakshane.com/logo.png",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Near XYZ Square",
+      "streetAddress": "Near ITI Signal, Aundh",
       "addressLocality": "Pune",
       "addressRegion": "Maharashtra",
-      "postalCode": "411001",
+      "postalCode": "411007",
       "addressCountry": "IN"
     },
     "telephone": "+919876543210",
@@ -49,14 +48,13 @@ export default function Home() {
       />
       <Navbar />
       <Hero />
-      <Services />
+      <SocialProof />
       <Doctors />
       <WhyUs />
-      <Resources />
+      <Services />
       <Testimonials />
-      <FAQ />
-      <Contact />
       <CTA />
+      <Location />
       <Footer />
     </main>
   );

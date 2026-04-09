@@ -1,37 +1,124 @@
-import { CalendarPlus, PhoneCall } from "lucide-react";
+"use client";
+
+import { CalendarPlus, Send, MessageCircle } from "lucide-react";
+import { useState } from "react";
 
 export default function CTA() {
-  return (
-    <section id="appointment" className="py-24 px-4 sm:px-6 relative bg-white dark:bg-[#020617] transition-colors duration-500">
-      <div className="container mx-auto max-w-5xl">
-        <div className="bg-gradient-to-br from-primary via-indigo-600 to-violet-700 dark:from-indigo-900 dark:via-indigo-800 dark:to-slate-900 rounded-[3rem] p-10 md:p-20 text-center shadow-[0_30px_100px_rgba(79,70,229,0.25)] relative overflow-hidden group opacity-0 animate-fade-in-up transition-all duration-500">
-          
-          {/* Decorative faint background shapes */}
-          <div className="absolute top-0 left-0 w-full h-full bg-[url('/images/grid.svg')] opacity-10 mix-blend-overlay pointer-events-none"></div>
-          <div className="absolute -top-40 -left-40 w-96 h-96 bg-white/20 dark:bg-white/5 rounded-full blur-[120px] pointer-events-none group-hover:scale-110 transition-transform duration-1000"></div>
-          <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-indigo-400/20 dark:bg-indigo-400/5 rounded-full blur-[120px] pointer-events-none group-hover:scale-110 transition-transform duration-1000"></div>
+  const [formState, setFormState] = useState<'idle' | 'sending' | 'success'>('idle');
 
-          <div className="relative z-10 max-w-3xl mx-auto">
-            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md text-white px-5 py-2 rounded-full font-bold text-xs uppercase tracking-widest mb-8">
-              <CalendarPlus size={14} className="text-blue-100" />
-              Limited Slots Available
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setFormState('sending');
+    setTimeout(() => {
+      setFormState('success');
+      setTimeout(() => setFormState('idle'), 3000);
+    }, 1500);
+  };
+
+  return (
+    <section id="appointment" className="section-padding gradient-cta grid-overlay relative overflow-hidden">
+      
+      {/* Decorative blobs */}
+      <div className="absolute top-[-15%] right-[-10%] w-[500px] h-[500px] bg-purple-400/15 rounded-full blur-[120px] pointer-events-none"></div>
+      <div className="absolute bottom-[-15%] left-[-10%] w-[400px] h-[400px] bg-blue-400/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+      <div className="container mx-auto max-w-7xl relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          
+          {/* Left — CTA Text */}
+          <div className="text-center lg:text-left opacity-0 animate-slide-in-left" style={{ animationDelay: '0.2s' }}>
+            <div className="inline-flex items-center gap-2 glass-float text-white px-5 py-2 rounded-full font-bold text-xs uppercase tracking-wider mb-8">
+              <CalendarPlus size={14} />
+              Book in Seconds
             </div>
-            <h2 className="text-4xl md:text-6xl font-display font-bold text-white mb-8 tracking-tightest leading-[1.05]">
-              Prioritize Your Health <br className="hidden md:block" /> — <span className="text-blue-200">Book Now.</span>
+            <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-6 tracking-tight leading-tight">
+              Book your appointment{" "}
+              <span className="text-blue-200">in seconds</span>
             </h2>
-            <p className="text-blue-50/90 text-lg md:text-2xl font-light mb-12 leading-relaxed max-w-2xl mx-auto">
-              Expert surgical and pediatric care is just a click away. Join 15,000+ happy families.
+            <p className="text-blue-100/70 text-lg font-light mb-8 leading-relaxed max-w-lg mx-auto lg:mx-0">
+              Skip the wait. Fill in the form or reach us directly on WhatsApp. We&apos;ll confirm your slot instantly.
             </p>
-            
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-              <a href="#contact" className="w-full sm:w-auto bg-white dark:bg-slate-100 text-primary px-10 py-5 rounded-full font-bold shadow-2xl hover:bg-slate-50 dark:hover:bg-white transition-all hover:-translate-y-1 active:scale-95 flex items-center justify-center gap-3 text-lg">
-                <CalendarPlus size={22} />
-                Book Appointment
-              </a>
-              <a href="tel:+911234567890" className="w-full sm:w-auto bg-white/10 backdrop-blur-md border border-white/20 text-white px-10 py-5 rounded-full font-bold hover:bg-white/20 transition-all hover:-translate-y-1 active:scale-95 flex items-center justify-center gap-3 text-lg">
-                <PhoneCall size={22} />
-                Quick Call
-              </a>
+
+            {/* WhatsApp CTA */}
+            <a
+              href="https://wa.me/919876543210?text=Hi%2C%20I'd%20like%20to%20book%20an%20appointment"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 glass-float text-white px-8 py-4 rounded-xl font-bold hover:bg-white/20 transition-all text-base"
+            >
+              <MessageCircle size={22} />
+              Book via WhatsApp
+            </a>
+          </div>
+
+          {/* Right — Form */}
+          <div className="opacity-0 animate-slide-in-right" style={{ animationDelay: '0.4s' }}>
+            <div className="glass-card-strong rounded-3xl p-8 md:p-10 shadow-2xl">
+              <h3 className="font-display font-bold text-xl text-slate-900 mb-6">
+                Quick Appointment
+              </h3>
+              
+              <form onSubmit={handleSubmit} className="space-y-5">
+                <div className="space-y-1.5">
+                  <label htmlFor="apt-name" className="text-sm font-semibold text-slate-600">Full Name</label>
+                  <input 
+                    id="apt-name"
+                    type="text" 
+                    placeholder="Your Name" 
+                    required
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl py-3.5 px-5 text-sm outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all text-slate-900"
+                  />
+                </div>
+                
+                <div className="space-y-1.5">
+                  <label htmlFor="apt-phone" className="text-sm font-semibold text-slate-600">Phone Number</label>
+                  <input 
+                    id="apt-phone"
+                    type="tel" 
+                    placeholder="+91 XXXXX XXXXX" 
+                    required
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl py-3.5 px-5 text-sm outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all text-slate-900"
+                  />
+                </div>
+
+                <div className="space-y-1.5">
+                  <label htmlFor="apt-service" className="text-sm font-semibold text-slate-600">Service</label>
+                  <select 
+                    id="apt-service"
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl py-3.5 px-5 text-sm outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all appearance-none text-slate-900"
+                    required
+                  >
+                    <option value="">Select a service</option>
+                    <option value="pediatrics">Pediatrics</option>
+                    <option value="surgery">General Surgery</option>
+                    <option value="vaccination">Vaccination</option>
+                    <option value="nutrition">Child Nutrition</option>
+                    <option value="preventive">Preventive Care</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+
+                <button 
+                  type="submit" 
+                  disabled={formState !== 'idle'}
+                  className={`w-full py-4 rounded-xl font-bold flex items-center justify-center gap-3 transition-all duration-300 shadow-lg text-base ${
+                    formState === 'success' 
+                      ? 'bg-emerald-500 text-white' 
+                      : 'bg-indigo-600 text-white hover:bg-indigo-700 hover:shadow-xl active:scale-[0.98]'
+                  }`}
+                >
+                  {formState === 'idle' && (
+                    <>
+                      <Send size={18} />
+                      Book Now
+                    </>
+                  )}
+                  {formState === 'sending' && (
+                    <div className="w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                  )}
+                  {formState === 'success' && 'Appointment Requested! ✓'}
+                </button>
+              </form>
             </div>
           </div>
 
