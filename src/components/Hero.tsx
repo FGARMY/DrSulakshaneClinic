@@ -17,13 +17,13 @@ export default function Hero() {
           <div className="w-full lg:w-1/2 relative z-20 flex flex-col gap-6 text-left items-start lg:py-20">
             
             {/* Badge */}
-            <div className="glass-float text-white text-xs sm:text-sm font-semibold px-5 py-2.5 rounded-full inline-flex items-center w-fit opacity-0 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+            <div className="glass-float text-white text-xs sm:text-sm font-semibold px-5 py-2.5 rounded-full inline-flex items-center w-fit animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
               <span className="w-2 h-2 rounded-full bg-emerald-400 mr-3 animate-pulse ring-4 ring-emerald-400/20"></span>
               Trusted Clinic in Aundh, Pune
             </div>
  
             {/* Headline */}
-            <div className="flex flex-col gap-5 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+            <div className="flex flex-col gap-5 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
               <h1 className="text-white font-display text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] xl:text-6xl font-bold leading-[1.1] tracking-tight">
                 We provide{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-purple-200">
@@ -38,7 +38,7 @@ export default function Hero() {
             </div>
   
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mt-2 w-full sm:w-auto opacity-0 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mt-2 w-full sm:w-auto animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
               <Link 
                 href="#appointment" 
                 className="px-8 py-4 rounded-xl bg-white text-indigo-700 font-bold hover:bg-slate-50 transition-all shadow-2xl text-sm sm:text-base text-center flex items-center justify-center gap-2 group active:scale-95"
@@ -55,8 +55,8 @@ export default function Hero() {
               </a>
             </div>
 
-            {/* Floating Stats — Mobile (below buttons) */}
-            <div className="flex flex-wrap gap-4 mt-4 lg:hidden opacity-0 animate-fade-in-up" style={{ animationDelay: '0.7s' }}>
+            {/* Floating Stats — Mobile */}
+            <div className="flex flex-wrap gap-4 mt-4 lg:hidden animate-fade-in-up" style={{ animationDelay: '0.7s' }}>
               <div className="glass-float rounded-xl px-4 py-3 flex items-center gap-3">
                 <div className="w-9 h-9 rounded-lg bg-emerald-500/20 flex items-center justify-center text-emerald-300">
                   <Users size={18} />
@@ -76,12 +76,11 @@ export default function Hero() {
                 </div>
               </div>
             </div>
-
           </div>
 
           {/* Right Content — Doctor Image */}
           <div className="w-full lg:w-1/2 relative flex items-end justify-center z-10">
-            <div className="relative opacity-0 animate-slide-in-right" style={{ animationDelay: '0.4s' }}>
+            <div className="relative animate-slide-in-right" style={{ animationDelay: '0.4s' }}>
               <Image
                 src="/images/hero-doctor-transparent.png"
                 alt="Dr. Sulakshane - Trusted Doctor in Aundh, Pune"
@@ -133,7 +132,6 @@ export default function Hero() {
           <path d="M0 80L1440 80L1440 0C1440 0 1080 60 720 60C360 60 0 0 0 0L0 80Z" fill="#f8fafc"/>
         </svg>
       </div>
-
     </section>
   );
 }
