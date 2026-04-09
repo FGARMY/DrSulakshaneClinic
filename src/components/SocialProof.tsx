@@ -14,7 +14,7 @@ export default function SocialProof() {
   return (
     <section className="relative z-30 -mt-8 px-4 sm:px-6">
       <div className="container mx-auto max-w-4xl">
-        <div className="glass-card-strong rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+        <div className="glass-card-strong rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
           
           {/* Avatars */}
           <div className="flex items-center">
