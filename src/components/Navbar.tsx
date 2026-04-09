@@ -1,161 +1,116 @@
 "use client";
 
-import { Activity, Menu, X, Phone } from "lucide-react";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
+import { Menu, X, Heart } from "lucide-react";
 
-const NAV_ITEMS = ["Home", "Doctors", "Services", "Testimonials", "Contact"];
+const NAV_LINKS = [
+  { label: "Doctors", href: "#doctors" },
+  { label: "Services", href: "#services" },
+  { label: "Testimonials", href: "#testimonials" },
+  { label: "Contact", href: "#contact" },
+];
 
+/**
+ * Navbar — sticky header with logo, nav links, and "Book Appointment" CTA.
+ * Transitions from transparent → white background on scroll.
+ */
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
- 
+  const [open, setOpen] = useState(false);
+
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const onScroll = () => setScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  /* lock body scroll when mobile menu is open */
   useEffect(() => {
-    if (mobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-  }, [mobileMenuOpen]);
+    document.body.style.overflow = open ? "hidden" : "";
+  }, [open]);
 
   return (
-    <div 
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-in-out ${
-        scrolled ? "py-2" : "py-4"
+    <header
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        scrolled ? "bg-white shadow-sm" : "bg-white/0"
       }`}
+      role="banner"
     >
-      <nav className="container mx-auto px-4 md:px-6 max-w-7xl">
-        <div 
-          className={`flex items-center justify-between rounded-2xl px-5 md:px-8 py-3 transition-all duration-500 ease-in-out relative z-50 ${
-            scrolled || mobileMenuOpen
-              ? "glass-nav shadow-lg" 
-              : "bg-transparent"
-          }`}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
+        {/* Logo */}
+        <Link
+          href="/"
+          className="flex items-center gap-2"
+          aria-label="Dr. Sulakshane Multi Speciality Clinic — home"
         >
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5 group" aria-label="Dr. Sulakshane Clinic Home" onClick={() => setMobileMenuOpen(false)}>
-            <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 ${
-              scrolled || mobileMenuOpen
-                ? "bg-indigo-600 text-white shadow-lg shadow-indigo-200"
-                : "bg-white/20 text-white backdrop-blur-sm"
-            }`} aria-hidden="true">
-              <Activity size={22} />
-            </div>
-            <div className="flex flex-col">
-              <span className={`text-base md:text-lg font-display font-bold leading-tight ${
-                scrolled || mobileMenuOpen ? "text-slate-900" : "text-white"
-              }`}>
-                Dr. Sulakshane
-              </span>
-              <span className={`text-[10px] font-medium tracking-wider uppercase ${
-                scrolled || mobileMenuOpen ? "text-indigo-600" : "text-white/70"
-              }`}>
-                Multi Speciality Clinic
-              </span>
-            </div>
+          <div className="w-9 h-9 rounded-lg bg-teal flex items-center justify-center text-white" aria-hidden="true">
+            <Heart size={18} strokeWidth={2.5} />
+          </div>
+          <span className="font-semibold text-navy text-[15px] leading-tight hidden sm:block">
+            Dr. Sulakshane<br />
+            <span className="text-[11px] font-normal text-slate-500 tracking-wide uppercase">
+              Multi Speciality Clinic
+            </span>
+          </span>
+        </Link>
+
+        {/* Desktop nav */}
+        <nav className="hidden md:flex items-center gap-8" aria-label="Primary navigation">
+          {NAV_LINKS.map((l) => (
+            <Link
+              key={l.href}
+              href={l.href}
+              className="text-sm font-medium text-navy/70 hover:text-navy transition-colors"
+            >
+              {l.label}
+            </Link>
+          ))}
+        </nav>
+
+        {/* Desktop CTA */}
+        <Link
+          href="#booking"
+          className="hidden md:inline-flex items-center gap-2 bg-teal text-white text-sm font-semibold px-5 py-2.5 rounded-lg hover:bg-teal-dark transition-colors shadow-sm"
+          aria-label="Book an appointment"
+        >
+          Book Appointment
+        </Link>
+
+        {/* Mobile toggle */}
+        <button
+          className="md:hidden w-10 h-10 flex items-center justify-center rounded-lg text-navy"
+          onClick={() => setOpen(!open)}
+          aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
+        >
+          {open ? <X size={22} /> : <Menu size={22} />}
+        </button>
+      </div>
+
+      {/* Mobile menu */}
+      {open && (
+        <div className="md:hidden fixed inset-0 top-16 bg-white z-40 px-6 pt-6 flex flex-col gap-2 animate-fade-in">
+          {NAV_LINKS.map((l) => (
+            <Link
+              key={l.href}
+              href={l.href}
+              className="text-lg font-medium text-navy py-3 border-b border-slate-100"
+              onClick={() => setOpen(false)}
+            >
+              {l.label}
+            </Link>
+          ))}
+          <Link
+            href="#booking"
+            className="mt-4 bg-teal text-white text-center py-3.5 rounded-lg font-semibold"
+            onClick={() => setOpen(false)}
+            aria-label="Book an appointment"
+          >
+            Book Appointment
           </Link>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8" aria-label="Main Navigation">
-            {NAV_ITEMS.map((item) => (
-              <Link 
-                key={item} 
-                href={`#${item.toLowerCase()}`}
-                className={`text-sm font-medium transition-all relative group ${
-                  scrolled 
-                    ? "text-slate-600 hover:text-indigo-600" 
-                    : "text-white/80 hover:text-white"
-                }`}
-              >
-                {item}
-                <span className="absolute -bottom-1 left-0 h-0.5 bg-indigo-500 transition-all duration-300 w-0 group-hover:w-full" aria-hidden="true"></span>
-              </Link>
-            ))}
-          </nav>
-
-          {/* Desktop CTA */}
-          <div className="hidden md:flex items-center gap-3">
-            <a 
-              href="tel:+919876543210"
-              className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-all ${
-                scrolled 
-                  ? "text-slate-600 hover:text-indigo-600"
-                  : "text-white/80 hover:text-white"
-              }`}
-            >
-              <Phone size={16} />
-              <span className="hidden xl:inline">Call Now</span>
-            </a>
-            <Link 
-              href="#appointment" 
-              className="bg-indigo-600 text-white px-6 py-2.5 rounded-xl text-sm font-semibold transition-all shadow-lg shadow-indigo-200/50 hover:bg-indigo-700 hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0"
-            >
-              Book Appointment
-            </Link>
-          </div>
-
-          {/* Mobile Toggle */}
-          <div className="lg:hidden flex items-center gap-2">
-            <button 
-              className={`w-10 h-10 rounded-xl flex items-center justify-center transition-colors ${
-                scrolled || mobileMenuOpen ? "text-slate-900 bg-slate-100" : "text-white bg-white/10"
-              }`}
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
-              aria-expanded={mobileMenuOpen}
-            >
-              {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
-            </button>
-          </div>
         </div>
-
-        {/* Mobile Overlay */}
-        <div 
-          className={`lg:hidden fixed inset-0 z-40 bg-slate-900/50 backdrop-blur-sm transition-all duration-500 ${
-            mobileMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
-          }`}
-          onClick={() => setMobileMenuOpen(false)}
-        />
-
-        {/* Mobile Menu */}
-        <div 
-          className={`lg:hidden fixed top-[80px] left-4 right-4 z-50 bg-white rounded-2xl p-6 shadow-2xl transition-all duration-500 origin-top ${
-            mobileMenuOpen 
-              ? "opacity-100 scale-100 translate-y-0" 
-              : "opacity-0 scale-95 -translate-y-4 pointer-events-none"
-          }`}
-        >
-          <div className="flex flex-col gap-4">
-            {NAV_ITEMS.map((item, idx) => (
-              <Link 
-                key={item} 
-                href={`#${item.toLowerCase()}`}
-                className="text-lg font-display font-semibold text-slate-700 hover:text-indigo-600 transition-all py-2"
-                onClick={() => setMobileMenuOpen(false)}
-                style={{ transitionDelay: `${idx * 50}ms` }}
-              >
-                {item}
-              </Link>
-            ))}
-            <hr className="border-slate-100 my-2" />
-            <Link 
-              href="#appointment" 
-              className="bg-indigo-600 text-white text-center py-4 rounded-xl font-display font-bold shadow-lg shadow-indigo-200/50 transition-all active:scale-[0.98]"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Book Appointment
-            </Link>
-          </div>
-        </div>
-      </nav>
-    </div>
+      )}
+    </header>
   );
 }
